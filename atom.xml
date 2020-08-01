@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://alex.github.io</id>
-    <title>Gridea</title>
-    <updated>2020-08-01T03:17:04.388Z</updated>
+    <title>Ali &apos;s Home</title>
+    <updated>2020-08-01T03:18:27.820Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://alex.github.io"/>
     <link rel="self" href="https://alex.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>Ali的学习屋</subtitle>
     <logo>https://alex.github.io/images/avatar.png</logo>
     <icon>https://alex.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, Ali &apos;s Home</rights>
     <entry>
         <title type="html"><![CDATA[在线学习]]></title>
         <id>https://alex.github.io/post/603/</id>

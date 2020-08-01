@@ -1,0 +1,202 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SpringCloud学习笔记(1)——Eureka | Gridea</title>
+<link rel="shortcut icon" href="https://alex.github.io/favicon.ico?v=1596250978242">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://alex.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="SpringCloud学习笔记(1)——Eureka | Gridea - Atom Feed" href="https://alex.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Spring Cloud
+
+如果想学习Java工程化、高性能及分布式、深入浅出。微服务、Spring，MyBatis，Netty源码分析的朋友可以加我的Java高级交流：854630135，群里有阿里大牛直播讲解技术，以及Java大型互联网..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://alex.github.io">
+  <img class="avatar" src="https://alex.github.io/images/avatar.png?v=1596250978242" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              SpringCloud学习笔记(1)——Eureka
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-03-01
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p><strong>Spring Cloud</strong></p>
+<figure data-type="image" tabindex="1"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress10-1551925792.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>如果想学习Java工程化、高性能及分布式、深入浅出。微服务、Spring，MyBatis，Netty源码分析的朋友可以加我的Java高级交流：854630135，群里有阿里大牛直播讲解技术，以及Java大型互联网技术的视频免费分享给大家。 Spring Cloud为开发者快速构建通用的分布式系统（例如：配置管理、服务发现、断路器、智能路由、微代理、控制总线、一次性的Token、全局锁、领导者选举、分布式会话、集群状态）提供工具。 这里用的是最新版本Edgware</p>
+<figure data-type="image" tabindex="2"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress0-1551925792-1.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p><strong>操作步骤</strong> 1、新建一个工程作为Eureka Server</p>
+<figure data-type="image" tabindex="3"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress2-1551925793.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress4-1551925793.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>创建完成后的pom.xml文件是这样的</p>
+<figure data-type="image" tabindex="5"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress6-1551925793.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>接下来，运行一个Eureka Server</p>
+<figure data-type="image" tabindex="6"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress7-1551925793.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress5-1551925794.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>所以，最终这个工程看起来是这样的</p>
+<figure data-type="image" tabindex="8"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress1-1551925794.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>启动以后，在浏览器中输入http://localhost:8761/就能看的如下界面</p>
+<figure data-type="image" tabindex="9"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress4-1551925794.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>2、接下来，再建一个工程作为Eureka Client。唯一不同的是artifact id换成spring-cloud-starter-netflix-eureka-client 接下都是翻译自官方文档中第三部分Spring Cloud Netflix第11章部分小节 <strong>11.2 Registering with Eureka</strong> 当客户端用Eureka注册的时候，它提供自身的元数据，比如主机、端口、url、主页地址等等。Eureka接收某个服务下所有实例的心跳消息。如果心跳检测失败（超过配置的超时时间）了，那么这个实例通常会被从注册列表中删除。</p>
+<figure data-type="image" tabindex="10"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress2-1551925794.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>只要在你的应用的classpath下有spring-cloud-starter-netflix-eureka-client，那么将会自动注册到Eureka Server。当然需要配置Eureka Server的地址。例如：</p>
+<figure data-type="image" tabindex="11"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress6-1551925794.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>默认的应用的名称、虚拟主机和非安全的端口分别用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi>s</mi><mi>p</mi><mi>r</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi mathvariant="normal">.</mi><mi>a</mi><mi>p</mi><mi>p</mi><mi>l</mi><mi>i</mi><mi>c</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mi mathvariant="normal">.</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi></mrow><mi mathvariant="normal">、</mi></mrow><annotation encoding="application/x-tex">{spring.application.name}、</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">.</span><span class="mord mathdefault">a</span><span class="mord mathdefault">p</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">c</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">i</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord">.</span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span></span><span class="mord cjk_fallback">、</span></span></span></span>{spring.application.name}和${server.port}代表。 如果不想让Eureka发现客户端，你可以设置eureka.client.enabled的值为false 如果想学习Java工程化、高性能及分布式、深入浅出。微服务、Spring，MyBatis，Netty源码分析的朋友可以加我的Java高级交流：854630135，群里有阿里大牛直播讲解技术，以及Java大型互联网技术的视频免费分享给大家。 于是</p>
+<figure data-type="image" tabindex="12"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress6-1551925795.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<figure data-type="image" tabindex="13"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress6-1551925795-1.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>观察两边的启动日志</p>
+<figure data-type="image" tabindex="14"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress1-1551925795.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<figure data-type="image" tabindex="15"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress9-1551925795.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>此时再看http://localhost:8761/</p>
+<figure data-type="image" tabindex="16"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress10-1551925795.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p><strong>11.4 Status Page and Health Indicator</strong> Eureka实例的状态页面和健康指示器默认情况下分别用&quot;/info&quot;和&quot;/health&quot;代表。当然这个是可以改的。默认就像下面这样</p>
+<figure data-type="image" tabindex="17"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress2-1551925796.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p><strong>11.6 Eureka’s Health Checks</strong> 默认情况下，Eureka用客户端心跳检测来判断一个客户端是否活着。除非有特殊情况，否则这个客户端不会传播这个应用的健康检查状态给每个Spring Boot监控器。这就意味着在注册成功以后，将总是宣称这个应用是&quot;UP&quot;状态。这个行为可以被Eureka健康检查改变，这种改变的结果就是传播应用的状态给Eureka</p>
+<figure data-type="image" tabindex="18"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress6-1551925796.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>注意：eureka.client.healthcheck.enabled=true只应该写在application.yml中。 <strong>11.7.3 Changing the Eureka Instance ID</strong> 默认的实例ID的格式是这样的：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi>s</mi><mi>p</mi><mi>r</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi mathvariant="normal">.</mi><mi>c</mi><mi>l</mi><mi>o</mi><mi>u</mi><mi>d</mi><mi mathvariant="normal">.</mi><mi>c</mi><mi>l</mi><mi>i</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>h</mi><mi>o</mi><mi>s</mi><mi>t</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi></mrow><mo>:</mo></mrow><annotation encoding="application/x-tex">{spring.cloud.client.hostname}:</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">.</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">d</span><span class="mord">.</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mord">.</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span></span></span>{spring.application.name}:<span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;}&#039;, got &#039;EOF&#039; at end of input: …n.instance\_id:'>{spring.application.instance\_id:</span>{server.port}}} 当然，可以使用eureka.instance.instanceId覆盖这种默认的设置 欢迎工作一到八年的Java工程师朋友们加入Java高级交流：854630135 本群提供免费的学习指导 架构资料 以及免费的解答 不懂得问题都可以在本群提出来 之后还会有直播平台和讲师直接交流噢</p>
+<blockquote>
+<p>原文始发于：<a href="https://zhuanlan.zhihu.com/p/58459425">SpringCloud学习笔记(1)——Eureka</a></p>
+</blockquote>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://alex.github.io/post/244/">
+              <h3 class="post-title">
+                小伙子，你真的搞懂 transient  关键字了吗？
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://alex.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

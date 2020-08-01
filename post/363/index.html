@@ -1,0 +1,178 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spring实战拆书--SpringBean | Gridea</title>
+<link rel="shortcut icon" href="https://alex.github.io/favicon.ico?v=1596250978242">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://alex.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Spring实战拆书--SpringBean | Gridea - Atom Feed" href="https://alex.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="1.准备工作 请在github上下载源码结合文章阅读，效果更佳 在创建了SpringBoot项目后，我们首先需要开启组件扫描，如下代码所示。 @Configuration //扫描指定包目录 @ComponentScan(basePacka..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://alex.github.io">
+  <img class="avatar" src="https://alex.github.io/images/avatar.png?v=1596250978242" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Spring实战拆书--SpringBean
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-03-01
+              </span>
+              <span>
+                10 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p><strong>1.准备工作</strong> 请在github上下载源码结合文章阅读，效果更佳 在创建了SpringBoot项目后，我们首先需要开启组件扫描，如下代码所示。 @Configuration <em>//扫描指定包目录</em> @ComponentScan(basePackages=&quot;com.wjc&quot;) public class BeanConfig { ｝ 声明一个测试Bean的接口，全文的主要内容都是通过此接口的实现类完成的  package com.wjc.spring.bean; public interface <strong>Bird</strong> { void <strong>fly</strong>(); void <strong>feed</strong>(); void <strong>twitter</strong>(); void <strong>changeTwiter</strong>(); }</p>
+<hr>
+<p><strong>2.自动装配</strong> 自动装配是最常见的Bean装配形式。 我们首先写一个Bird接口的实现类来展示自动装配，只需一个“@Component”注解即可完成。 package com.wjc.spring.bean.impl; import org.springframework.beans.factory.annotation.Qualifier; import org.springframework.stereotype.Component; import com.wjc.spring.bean.Bird; <em>//这是知更鸟</em> <strong>@Component</strong> public class <strong>Robin</strong> implements <strong>Bird</strong> { private String flyStr =&quot;知更鸟起飞&quot;; private String feedStr = &quot;不想吃东西&quot;; private String twiterStr = &quot;啊啊啊&quot;; <strong>@Override</strong> public void <strong>fly</strong>() { System.out.println(flyStr); } <strong>@Override</strong> public void <strong>feed</strong>() { System.out.println(feedStr); } <strong>@Override</strong> public void <strong>twitter</strong>() { System.out.println(twiterStr); } <strong>@Override</strong> public void <strong>changeTwiter</strong>() { } } 在测试时，我们只需要使用“@Autowired”注解，就可以拿到对应的对象了 通过Junit可以测试装配是否完成  @RunWith(SpringJUnit4ClassRunner.class) @ContextConfiguration(classes=BeanConfig.class) public class BeanTest { @Autowired private Bird bird; <em>//测试1，查看是否自动装配了知更鸟</em> <em>//此时bean.impl只有robin</em> @Test public void BeanTest1() { assertNotNull(bird); } }</p>
+<hr>
+<p><strong>3.处理自动装配的歧义性（@Qualifier）</strong> 试想如果我有2个Bird接口的实现类，spring在装配时是否会因为不知道具体需要哪个实现类而报错？ 此时声明一个“Parrot”，也实现bird接口，运行test方法会如何？ package com.wjc.spring.bean.impl; import org.springframework.beans.factory.annotation.Qualifier; import org.springframework.stereotype.Component; import com.wjc.spring.bean.Bird; <em>//这是鹦鹉</em> <strong>@Component</strong> public class <strong>Parrot</strong> implements <strong>Bird</strong> { private String flyStr =&quot;鹦鹉起飞&quot;; private String feedStr = &quot;啥都吃&quot;; private String twiterStr = &quot;说人话&quot;; <strong>@Override</strong> public void <strong>fly</strong>() { System.out.println(flyStr); } <strong>@Override</strong> public void <strong>feed</strong>() { System.out.println(feedStr); } <strong>@Override</strong> public void <strong>twitter</strong>() { System.out.println(twiterStr); } <strong>@Override</strong> public void <strong>changeTwiter</strong>() { twiterStr = &quot;你好你好&quot;; } } 运行结果如下： org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.wjc.spring.test.BeanTest': Unsatisfied dependency expressed through field 'bird'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.wjc.spring.bean.Bird' available: expected single matching bean but found 5: parrot,quail,robin,Cuckoo1,Cuckoo2 at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject<br>
+(AutowiredAnnotationBeanPostProcessor.java:596)<br>
+可以看到，由于Spring并不知道应该将哪一个实现类注入到bird中，报出了　“UnsatisfiedDependencyException”，我们可以通过注解“@Qualifier(&quot;parrot&quot;)”来解决此问题 <em>//这是鹦鹉</em> @Component @Qualifier(&quot;parrot&quot;) public class Parrot implements Bird { 在获取实现类时使用如下方式，即可获取到自己想要的对象实例了 @Autowired @Qualifier(&quot;parrot&quot;) private Bird parrot; <em>//添加@Qualifier(&quot;parrot&quot;)来解决声明问题</em> @Test public void BeanTest3() { <em>// 此时鹦鹉添加了@Primary</em> parrot.fly(); assertNotNull(parrot); }</p>
+<hr>
+<p><strong>4.Bean的作用域</strong> 已知Spring默认是单例模式，但在多线程高并发的情况下，单例模式其实未必是最佳选择，如果线程A将Bean赋了值，而此时线程B拿取了被A赋值的对象，并返回了对应的结果，此时是不是会出现B返回了预料之外的结果？ 本文简单讨论一下原型模式下Bean的传递，和会发生的问题，具体的各自作用域请百度“spring作用域” 已知Spring作用域如下：singleton / prototype / request / session /global session 我们来看一下如下代码，一个原型模式的对象 package com.wjc.spring.bean.impl; import org.springframework.beans.factory.annotation.Qualifier; import org.springframework.context.annotation.Scope; import org.springframework.stereotype.Component; import com.wjc.spring.bean.Bird; <em>//这是鹌鹑</em> <em>//这个使用原型模式</em> <strong>@Component</strong> <strong>@Qualifier</strong>(&quot;Quail&quot;) <strong>@Scope</strong>(&quot;prototype&quot;) public class <strong>Quail</strong> implements <strong>Bird</strong> { private String flyStr =&quot;鹌鹑起飞&quot;; private String feedStr = &quot;鹌鹑想吃啥就吃啥&quot;; private String twiterStr = &quot;鹌鹑不知道怎么叫&quot;; <strong>@Override</strong> public void <strong>fly</strong>() { <em>// TODO Auto-generated method stub</em> System.out.println(flyStr); } <strong>@Override</strong> public void <strong>feed</strong>() { <em>// TODO Auto-generated method stub</em> System.out.println(feedStr); } <strong>@Override</strong> public void <strong>twitter</strong>() { <em>// TODO Auto-generated method stub</em> System.out.println(twiterStr); } public void <strong>changeTwiter</strong>() { twiterStr = &quot;我大鹌鹑今天就是饿死。。。。&quot;; } } 看下在TEST时他的表现如何： @RunWith(SpringJUnit4ClassRunner.class) @ContextConfiguration(classes=BeanConfig.class) public class BeanTest3 { @Autowired @Qualifier(&quot;Quail&quot;) private Bird bird; @Autowired @Qualifier(&quot;Quail&quot;) private Bird bird2; <em>//测试原型模式与单例的区别</em> @Test public void BeanTest1() { bird.twitter(); bird.changeTwiter(); bird.twitter(); bird2.twitter(); bird2.changeTwiter(); bird2.twitter(); } } 运行结果： 鹌鹑不知道怎么叫 我大鹌鹑今天就是饿死。。。。 鹌鹑不知道怎么叫 我大鹌鹑今天就是饿死。。。。 spring确实将此Bean对象变成了原型模式。那么作用域是否就这么简单的完成了？ 我们看一下如下代码 @Service public class BirdServiceImpl implements BirdService { @Autowired @Qualifier(&quot;Quail&quot;) private Bird bird; public void ScopTest() { bird.twitter(); bird.changeTwiter(); bird.twitter(); } } 运行测试类： @RunWith(SpringJUnit4ClassRunner.class) @ContextConfiguration(classes=BeanConfig.class) public class ServiceTest { @Autowired private BirdService birdService; @Autowired private BirdService birdService2; <em>//测试在Service上添加和不添加@Qualifier(&quot;Quail&quot;)时调用的Bean的区别</em> @Test public void ServiceTest2() { birdService.ScopTest(); birdService2.ScopTest(); } } 运行结果： 鹌鹑不知道怎么叫 我大鹌鹑今天就是饿死。。。。 我大鹌鹑今天就是饿死。。。。 我大鹌鹑今天就是饿死。。。。 ？？？？？？？？原型模式失效了？？？？ 为什么会发生这种情况？因为在此场景下，“BirdServiceImpl”是单例模式的，对Bean的操作不可避免的变成了单例的，如果添加如下代码结果就会完全不一样 @Service @Scope(&quot;prototype&quot;) public class BirdServiceImpl implements BirdService { @Autowired @Qualifier(&quot;Quail&quot;) private Bird bird; public void ScopTest() { bird.twitter(); bird.changeTwiter(); bird.twitter(); } } 再次运行时： 鹌鹑不知道怎么叫 我大鹌鹑今天就是饿死。。。。 鹌鹑不知道怎么叫 我大鹌鹑今天就是饿死。。。。 假设“ServiceTest”方法为Control层，“BirdServiceImpl”方法为Service层，“Quail”为Bean,在实际应用时，应该考虑Scop注解是否会可以成功生效。 如下为测试后的结果 //当Service上有@Scope(&quot;prototype&quot;)，Bean上有@Scope(&quot;prototype&quot;)时 返回不同对象 //当Service上有@Scope(&quot;prototype&quot;)，Bean上无@Scope(&quot;prototype&quot;)时 返回相同对象 //当Service上无@Scope(&quot;prototype&quot;)，Bean上有@Scope(&quot;prototype&quot;)时 返回相同对象 //当Service上无@Scope(&quot;prototype&quot;)，Bean上无@Scope(&quot;prototype&quot;)时 返回相同对象</p>
+<hr>
+<p><strong>5.注入式声明Bean</strong> 在上述代码中，我都是通过硬编码的形式在输入一些内容的，那么能否通过读取配置文件的方式完成输出内容呢？（实际运用场景：获取数据库连接对象Session） 我们首先定义一个对象，可以看到我没有添加任何注解，因为此对象不需要在这里进行装配！ package com.wjc.spring.bean.impl; import com.wjc.spring.bean.Bird; <em>//这是杜鹃</em> public class <strong>Cuckoo</strong> implements <strong>Bird</strong> { private String flyStr = &quot;fly&quot; ; private String feedStr = &quot;feed&quot;; private String twiterStr = &quot;twiter&quot;; public <strong>Cuckoo</strong>(String flyStr, String feedStr, String twiterStr) { super(); this.flyStr = flyStr; this.feedStr = feedStr; this.twiterStr = twiterStr; } <strong>@Override</strong> public void <strong>fly</strong>() { <em>// TODO Auto-generated method stub</em> System.out.println(flyStr); } <strong>@Override</strong> public void <strong>feed</strong>() { <em>// TODO Auto-generated method stub</em> System.out.println(feedStr); } <strong>@Override</strong> public void <strong>twitter</strong>() { <em>// TODO Auto-generated method stub</em> System.out.println(twiterStr); } <strong>@Override</strong> public void <strong>changeTwiter</strong>() { <em>// TODO Auto-generated method stub</em> twiterStr = &quot;杜鹃&quot;; } } 我们将Config改造一下，由他来负责装配对象 package com.wjc.spring.config; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.ComponentScan; import org.springframework.context.annotation.Configuration; import org.springframework.context.annotation.PropertySource; import org.springframework.core.env.Environment; import com.wjc.spring.bean.impl.Cuckoo; <strong>@Configuration</strong> <em>//扫描指定包目录</em> <strong>@ComponentScan(basePackages=&quot;com.wjc&quot;)</strong> <strong>@PropertySource(&quot;classpath:Cuckoo.properties&quot;)</strong> public class <strong>BeanConfig</strong> { <em>//开启组件扫描</em> <em>//获取资源</em> <strong>@Autowired</strong> private Environment env; <em>//通过配置文件装配Cuckoo</em> <strong>@Bean(name=&quot;Cuckoo1&quot;)</strong> public Cuckoo getbird() { return new Cuckoo(env.getProperty(&quot;flyStr&quot;,&quot;fly&quot;), env.getProperty(&quot;feedStr&quot;,&quot;feed&quot;), env.getProperty(&quot;twiterStr&quot;,&quot;twiter&quot;)); <em>//return new Cuckoo(&quot;fly&quot;,&quot;feed&quot;, &quot;twiter&quot;);</em> } <strong>@Bean(name=&quot;Cuckoo2&quot;)</strong> public Cuckoo getbird2() { return new Cuckoo(&quot;fly&quot;,&quot;feed&quot;, &quot;twiter&quot;); } } 可以看到我声明了2个&quot;Cuckoo&quot;对象实例，分别叫“Cuckoo1”，“Cuckoo2” 使用Test方法来执行一下 package com.wjc.spring.test; import org.junit.Test; import org.junit.runner.RunWith; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.beans.factory.annotation.Qualifier; import org.springframework.test.context.ContextConfiguration; import org.springframework.test.context.junit4.SpringJUnit4ClassRunner; import com.wjc.spring.bean.impl.Cuckoo; import com.wjc.spring.config.BeanConfig; @RunWith(SpringJUnit4ClassRunner.class) @ContextConfiguration(classes=BeanConfig.class) public class BeanTest4 { @Autowired @Qualifier(&quot;Cuckoo2&quot;) private Cuckoo Cuckoo; @Autowired @Qualifier(&quot;Cuckoo1&quot;) private Cuckoo Cuckoo1; <em>//测试通过配置文件装配Bean</em> @Test public void BeanTest1() { Cuckoo1.fly(); Cuckoo1.feed(); Cuckoo1.twitter(); Cuckoo.fly(); Cuckoo.feed(); Cuckoo.twitter(); } } 执行结果 cuckoo fly cuckoo feed cuckoo twiter fly feed twiter 可以看到成功的声明了对象。</p>
+<blockquote>
+<p>原文始发于：<a href="https://zhuanlan.zhihu.com/p/58339257">Spring实战拆书--SpringBean</a></p>
+</blockquote>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://alex.github.io/post/274/">
+              <h3 class="post-title">
+                关于IO流具体说明：
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://alex.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

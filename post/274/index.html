@@ -1,0 +1,197 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>关于IO流具体说明： | Gridea</title>
+<link rel="shortcut icon" href="https://alex.github.io/favicon.ico?v=1596250978242">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://alex.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="关于IO流具体说明： | Gridea - Atom Feed" href="https://alex.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="原文始发于：关于IO流具体说明       作者： Strive追逐者 IO流（Input Output）： 文件和程序直接项链的我们称为：节点流. 文件和程序之间有两个过程，显然是经过处理，我们称：处理流.
+流的分类： 从文件等（数据源）..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://alex.github.io">
+  <img class="avatar" src="https://alex.github.io/images/avatar.png?v=1596250978242" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              关于IO流具体说明：
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-03-01
+              </span>
+              <span>
+                9 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>原文始发于：<a href="https://zhuanlan.zhihu.com/p/58405705">关于IO流具体说明</a>       作者： <a href="https://www.zhihu.com/people/17674043193/activities">Strive追逐者</a> IO流（Input Output）： 文件和程序直接项链的我们称为：节点流. 文件和程序之间有两个过程，显然是经过处理，我们称：处理流.</p>
+<p>流的分类： 从文件等（数据源）到程序的我们称之为输入流（InputStream,Reader读进来） 从程序到目的地我们称之为输出流（OutPutStream，Writer写出去）</p>
+<p>处理数据单元： 字节流：按照字节读取数据 字符流：按照字符读取数据.</p>
+<p>功能不同： 1.节点流：可以直接从数据源换货目的地读写数据. 2.处理流（包装流）：不直接连接到数据源或目的地，是其他流进行封装，目的主要是简单化操作和提高性能.</p>
+<p>什么是IO流： 1.在Java程序中，对于数据的输入输出的操作以“流”（stream）方式进行. 2.J2SDK提供了各种各样的“流”类，用以获取不同种类的数据；程序中通过标准的输入或输出数据. 3.Java的流类型一般位于<a href="http://link.zhihu.com/?target=http%3A//Java.io">http://Java.io</a>包中.</p>
+<p>流的概念： 数据源：数据从哪来的？ <a href="http://link.zhihu.com/?target=http%3A//1.data">1.data</a> source. 提供原始数据的原始媒介，常见的：数据库，文件，其他程序，内存，网络连接，IO设备. 2.数据源就像水箱，流就像水管中流着的水流，程序就是我们的最终用户，流就是一个抽象，动态的概念，是一连串连续动态的数据集合.</p>
+<p>节点流和处理流的关系： 1.节点流处于io操作的第一线，所有操作必须通过他们进行. 2.处理流可以对其他流进行处理（提高效率或操作灵活性）</p>
+<p>文件字节流： 一，FileInputStream/FileOutStream 这些方法都是抽象类： 1.使用FileInputStream（字节输入流）读取文件内容 (1)abstract int read();//读取一个字节. (2)int read (byte b[])； (3)int read(byte b[];int off,int len); (4)int available(); (5)close();//关闭</p>
+<p>2.FileOutputSteam(字节输出流).写内容到文件. (1)abstract void write(int b);//一次写一个字节 (2)void write(byte b[]);//用数组输出字节 (3)void write(byte b[],int off,int len); (4)void flush();//刷新缓冲区 (5)void close();//关闭</p>
+<p>二：缓冲字节流 1.读文件和写文件都使用了缓冲区，减少了读写次数，从而提高了效率. 2.当创建这两个缓冲流的对象时时，会创建了内部缓冲数组，缺省使用 32 字节大小的缓冲区. 3.当读取数据时，数据按块读入缓冲区，其后的读操作则直接访问缓冲区. 4.当写入数据时，首先写入缓冲区，当缓冲区满时，其中的数据写入所连接的输出流。使用方法 flush()可以强制将缓冲区的内容全部写入输出流. 5.关闭流的顺序和打开流的顺序相反.只要关闭高层流即可，关闭高层流其实关闭的底层节点流 6.Flush 的使用：手动将 buffer 中内容写入文件.</p>
+<p>二（2） InputStreamReader 的作用是把 InputStream 转换成 Reader OutputStreamWriter 的作用是把 OutputStream 转换成 Writer</p>
+<p>三：打印流 1.PrintStream 提供了一系列的 print()和 println()，可以实现将基本数据类型格式化成字符串输出。对象类型将先调用toString()，然后输出该方法返回的字符串. 2.System.out 就是 PrintStream 的一个实例，代表显示器. 3.System.err 也是 PrintStream 的一个实例，代表显示器. 4.PrintStream的输出功能非常强大，通常需要输出文本内容，都可以将输出流包装成 PrintStream 后进行输出 5..PrintStream 的方法都不抛出 IOException.</p>
+<p>四：数据流 1.提供了可以存取所有 Java 基础类型数据（如：int，double等）和 String 的方法。 2.处理流，只针对字节流，二进制文件. 3.输入流链和输出流链 4.注意：只要关闭上层流即可.</p>
+<p>五:对象流 写对象： //第一步：创建对象流对象 //第二步：第二步写对象 //第三步：判断和关闭 读对象： //第一步：创建对象流对象 //第二步：读对象 对象序列化（Serialization） ObjectOutputStream——&gt;写对象（把对象的状态以字节的形式写入我们的磁盘的文件上）-&gt;又被称之为序列化 ObjectInputStream--&gt;读对象-&gt;反序列化(磁盘上字节形式的数据还原成对象的内存状态)</p>
+<p>将Java对象转换成字节序列（IO字节流） 对象反序列化（DeSerialization） 从字节序列中恢复java对象.</p>
+<p>为什么需要序列化： 序列化的对象可以保存到磁盘里面，也可以在网络上传输，使得不同的计算机可以共享对象（序列化的字节序列是与平台无关的）</p>
+<p>对象序列化需要的条件： 只有实现了Seralizable接口的类的对象才可以被序列化，Serializable接口中没有任何的方法，实现改接口的类不需要实现额外的方法.如果对象的属性是对象，属性对应类也必须实现Serializable接口.</p>
+<p>序列化能保存的元素内容： 1).只能保存对象的非静态成员变量. 2).不能保存任何成员方法和静态成员变量. 3).不保存Transient成员变量. 4).如果一个对象的成员变量是一个对象，这个对象的成员变量也会被保存. 5).串行化保存的只是变量的值，对于变量的任何修饰符，度不能保存.</p>
+<p>2.使用对象流把一个对象写到问件时不仅保证该对象时序列化的，而且该对象的成员对象也必须是可序列化的.</p>
+<p>3.如果一个可序列化的对象包含对某个不可序列化的对象的引用，那么整个序列元操作将会失败，并且会抛出一个NotSerializableException.我们可以将这个引用标记为transient,那么对象仍然可以序列化.</p>
+<p>对象序列化需要注意的事项： 一：同一个对象多次序列化的处理 1.所有保存到磁盘中的对象都有一个序列化编号. 2.序列化一个对象中，首先检查该对象是否已经序列化过. 3.如果没有进行序列化 4.如果序列化了，将不再重新序列化，而是输出编号即可. 二： 如果不希望某些属性（敏感）序列化，或不希望出现递归序列 1.为属性添加transient关键字（完成排除在序列化之外） 2.自定义序列化（不仅可以决定那些属性不参与序列化）还可以定义属性具体如何序列化</p>
+<p>三：序列化版本不兼容 1.修改了实例属性后，会影响版本号，从而导致反序列化不成功.</p>
+<p>文件夹的复制： 复制文件夹：字节流和字符流. 字节流：缓冲字节流（BuffereddInputStream,BufferedOutputStream,FileInputStream,FileOutputStream） 简述过程如： 1.复制一个文件 2.复制一个指定目录下的所有文件. 3.复制指定目录下所有文件及其子目录下的所有文件.</p>
+<figure data-type="image" tabindex="1"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress7-1551925800.jpeg" alt="关于IO流具体说明：" title="关于IO流具体说明：" loading="lazy"></figure>
+<p>设计模式：装饰器模式 装饰器模式：Decorator 职业：动态的为一个对象增加新的功能. 装饰模式是一种用于替代继承的技术，无需通过继承增加子类就能扩展对象的新功能，使用对象的关联关系代替继承关系，更加灵活，同食避免类型体系的快速膨胀.</p>
+<p>实现细节：如车 1.抽象构件角色 ICar 2.具体的构件角色 Car 3.装饰器角色 SuperCar 4.具体的装饰角色 FlyCar，WaterCar,AICar</p>
+<p>优点： 1.扩展对象功能，比继承灵活，不会导致类个数急剧增加. 2.可以对一个对象进行多次装饰，创建不同行为的组合得到功能更加大的对象. 3.具体构建类和具体装饰类可以独立变化，用户可以根据需要自己增加新的具体构件子类和具体装饰子类.</p>
+<p>缺点： 1.产生很多小对象，大量小对象占据内存，一定程度影响性能. 2.装饰模式易于出错，调试排查比较麻烦.</p>
+<p>IO流实现这些细节： 1.抽象构件角色 InputStream,OutputStream,Reader,Write. 2.具体构件角色：FileInputStream,FileOutputStream, 3.装饰器角色：FilerterInputStream,FilerOutputStream,持有一个抽象构件的引用. 4.具体装饰角色：BufferedInputSteam,BufferedOutputStream等.</p>
+<p>IO流体系总结： IO流整体架构体系： 1.字节流：InputStream,OutputStream 2.字符流：Reader,Writer 3.数据流：DataInputStream,DataOutputStream 4.对象流：ObjectInputStream,ObjectOutStream 5.缓冲流：BufferedInputStream,ObjectOutputStream,BuffereReadre,BufferedWriter. 6.转换流：InputStreamReader,OutputStreamWriter.</p>
+<p>Apache IOUtils的使用_Apache FileUtils的使用 一，IOUtils与FileUtiles Commous IO是apache的一个开源的工具包，封装了IO操作的相关类，使用Commous IO可以很方便的读写文件 1.FileUtils中提供了许多设计文件操作的，已封装好的方法. 2.IOUtils则是提供了读写文件的方法.</p>
+<p>有哪些方法： (1)String FileUtils.readFileToString(File file,String encoding) FileUtils.writeStringToFile(File file,String data,Stringencoding)读写文件 (2)FileUtils.copyFile(File srcFile,File destFile)复制文件 (3)FileUtils.copyURLToFile(URL source,File destination)复制url 对象到指定文件</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://alex.github.io/post/331/">
+              <h3 class="post-title">
+                SpringCloud学习笔记(2)——Ribbon
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://alex.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

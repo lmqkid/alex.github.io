@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://alex.github.io</id>
+    <title>Gridea</title>
+    <updated>2020-08-01T03:03:12.669Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://alex.github.io"/>
+    <link rel="self" href="https://alex.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://alex.github.io/images/avatar.png</logo>
+    <icon>https://alex.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[在线学习]]></title>
+        <id>https://alex.github.io/post/603/</id>
+        <link href="https://alex.github.io/post/603/">
+        </link>
+        <updated>2020-08-01T02:44:18.000Z</updated>
+        <content type="html"><![CDATA[<!-- wp:paragraph -->
+<p>本页面在线java由<a href="https://tool.lu">在线工具网站</a>提供，仅支持小程序的运行。下方提供Java各平台版本下载以及windows下环境变量的设置。</p>
+<!-- /wp:paragraph -->
+<p><iframe src="https://tool.lu/coderunner/embed/7VS.html" width="750" height="650" frameborder="0" mozallowfullscreen="" webkitallowfullscreen="" allowfullscreen=""></iframe></p>
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"normal"} -->
+<p class="has-normal-font-size"><strong>JRE： Java Runtime Environment   （ Java 程序运行环境 ）<br>JDK：Java Development Kit  （Java开发工具包 ）  <br></strong>JDK 中包含有 JRE , 在Java 8版本之前，JRE被包含于JDK目录中。<br> JDK  下载地址  (更多版本请关注<a href="https://www.java.com/zh_CN/">Java官网</a> )： <br> Windows 平台 ： <a href="http://www.lmqkid.com/wp-content/uploads/2020/02/jdk-10.0.1_windows-x64_bin.exe">JDK10（仅支持64位）</a>      <a href="http://www.lmqkid.com/wp-content/uploads/2020/02/jdk-8u241-windows-x64.exe">JDK8 （64位）</a>      <a href="http://www.lmqkid.com/wp-content/uploads/2020/02/jdk-8u241-windows-i586.exe">JDK8 （32位）</a><br> Linux  ARM 平台 ： <a href="http://www.lmqkid.com/wp-content/uploads/2020/02/jdk-8u241-linux-arm64-vfp-hflt.tar.gz"> JDK8 （64位）</a>      <a href="http://www.lmqkid.com/wp-content/uploads/2020/02/jdk-8u241-linux-arm32-vfp-hflt.tar.gz">JDK8 （32位）</a> <br> Linux  （ rpm ） ：  <a href="http://www.lmqkid.com/wp-content/uploads/2020/02/jdk-8u241-linux-x64.rpm">JDK8 （64位）</a>      <a href="http://www.lmqkid.com/wp-content/uploads/2020/02/jdk-8u241-linux-i586.rpm"> JDK8 （32位）</a> <br> MacOS ：  <a href="http://www.lmqkid.com/wp-content/uploads/2020/02/jdk-8u241-macosx-x64.dmg">JDK8 （64位） </a> </p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p><strong> JAVA Windows系统本地环境变量配置：</strong> <br>下载安装 （JDK 默认安装 地址为 C:\Program Files\Java\jdk，JRE默认安装地址为 C:\Program Files\Java\jre ）  </p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>右键  桌面 “此电脑 / 我的电脑 ”  选择属性 ，选择高级系统设置，高级选项中的环境变量。 （  以 JAVA10 为例）</p>
+<!-- /wp:paragraph -->
+<!-- wp:image {"id":636,"sizeSlug":"large"} -->
+<figure class="wp-block-image size-large"><img src="https://lmqkid.com/wp-content/uploads/2020/02/image-1024x615.png" alt="" class="wp-image-636"/></figure>
+<!-- /wp:image -->
+<!-- wp:paragraph -->
+<p>系统变量中，选择新建，先新建  JDK_HOME 。变量名为 JDK_HOME , 变量值选择 JDK的安装目录  </p>
+<!-- /wp:paragraph -->
+<!-- wp:image {"id":640,"sizeSlug":"large"} -->
+<figure class="wp-block-image size-large"><img src="https://lmqkid.com/wp-content/uploads/2020/02/image-4.png" alt="" class="wp-image-640"/></figure>
+<!-- /wp:image -->
+<!-- wp:paragraph -->
+<p>JRE_HOME 也执行一样的操作。</p>
+<!-- /wp:paragraph -->
+<!-- wp:image {"id":639,"sizeSlug":"large"} -->
+<figure class="wp-block-image size-large"><img src="https://lmqkid.com/wp-content/uploads/2020/02/image-3.png" alt="" class="wp-image-639"/></figure>
+<!-- /wp:image -->
+<!-- wp:paragraph -->
+<p>Path 变量在系统变量中已有，我们要做的就是加上JAVA，双击打开Path变量，在Path 最下面中添加%JDK_HOME%\bin    与%JRE_HOME%\bin 。由于Windows10 的特性，我们不需要加分号，但是为了命令能够正常使用，还是建议把这两条上移到最上面，如图所示：</p>
+<!-- /wp:paragraph -->
+<!-- wp:image {"id":641,"sizeSlug":"large"} -->
+<figure class="wp-block-image size-large"><img src="https://lmqkid.com/wp-content/uploads/2020/02/image-5.png" alt="" class="wp-image-641"/></figure>
+<!-- /wp:image -->
+<!-- wp:paragraph -->
+<p>CLASSPATH变量 其实已经不需要配置，不过也说一说怎么配置吧。<br> 新建变量名 CLASSPATH，变量值为 .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar   </p>
+<!-- /wp:paragraph -->
+<!-- wp:image {"id":642,"sizeSlug":"large"} -->
+<figure class="wp-block-image size-large"><img src="https://lmqkid.com/wp-content/uploads/2020/02/image-6.png" alt="" class="wp-image-642"/></figure>
+<!-- /wp:image -->
+<!-- wp:paragraph -->
+<p>待都配置完成后，系统打开命令控制符，或者是powershell中输入 cmd  ，然后输入java 可以看到java常用命令，输入java -version   可以看到安装的Java版本，这就证明我们的环境变量已经配置完成了。</p>
+<!-- /wp:paragraph -->
+<!-- wp:image {"id":643,"sizeSlug":"large"} -->
+<figure class="wp-block-image size-large"><img src="https://lmqkid.com/wp-content/uploads/2020/02/image-7.png" alt="" class="wp-image-643"/></figure>
+<!-- /wp:image -->]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[给你一份Spring Boot核心知识清单]]></title>
+        <id>https://alex.github.io/post/224/</id>
+        <link href="https://alex.github.io/post/224/">
+        </link>
+        <updated>2019-03-06T23:10:30.000Z</updated>
+        <content type="html"><![CDATA[<p>原文始发于：<a href="https://zhuanlan.zhihu.com/p/58470641">给你一份Spring Boot核心知识清单</a>   作者： <a href="https://www.zhihu.com/people/an-jing-de-cheng-xu-yuan-22/activities">安静的程序员</a></p>
+<figure data-type="image" tabindex="1"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress2-1551925778.jpeg" alt="给你一份Spring Boot核心知识清单" title="给你一份Spring Boot核心知识清单" loading="lazy"></figure>
+<p>在过去两三年的 Spring 生态圈，最让人兴奋的莫过于 Spring Boot 框架。或许从命名上就能看出这个框架的设计初衷：快速的启动 Spring 应用。因而 Spring Boot 应用本质上就是一个基于 Spring 框<br>
+架的应用，它是 Spring 对“约定优先于配置”理念的最佳实践产物，它能够帮助开发者更快速高效地构建基于 Spring 生态圈的应用。 那 Spring Boot 有何魔法？<strong>自动配置</strong>、<strong>起步依赖</strong>、<strong>Actuator</strong>、<strong>命令行界面(CLI)</strong> 是 Spring Boot 最重要的 4 大核心特性，其中 CLI 是 Spring Boot 的可选特性，虽然它功能强大，但也引入了一套不太常规的开发模型，因而这个系列的文章仅关注其它 3 种特性。 如文章标题，本文是这个系列的第一部分，将为你打开 Spring Boot 的大门，重点为你剖析其启动流程以及自动配置实现原理。要掌握这部分核心内容，理解一些 Spring 框架的基础知识，将会让你事半功倍。</p>
+<h2 id="一-抛砖引玉探索spring-ioc容器"><strong>一、抛砖引玉：探索Spring IoC容器</strong></h2>
+<p>如果有看过 SpringApplication.run()方法的源码，Spring Boot 冗长无比的启动流程一定会让你抓狂，透过现象看本质，SpringApplication 只是将一个典型的 Spring 应用的启动流程进行了扩展，因此，透彻理解 Spring 容器是打开 Spring Boot 大门的一把钥匙。 <strong>1.1、Spring IoC容器</strong> 可以把 Spring IoC 容器比作一间餐馆，当你来到餐馆，通常会直接招呼服务员：点菜！至于菜的原料是什么？如何用原料把菜做出来？可能你根本就不关心。IoC 容器也是一样，你只需要告诉它需要某个bean，它就把对应的实例（instance）扔给你，至于这个bean是否依赖其他组件，怎样完成它的初始化，根本就不需要你关心。 作为餐馆，想要做出菜肴，得知道菜的原料和菜谱，同样地，IoC 容器想要管理各个业务对象以及它们之间的依赖关系，需要通过某种途径来记录和管理这些信息。 BeanDefinition对象就承担了这个责任：容器中的每一个 bean 都会有一个对应的 BeanDefinition 实例，该实例负责保存bean对象的所有必要信息，包括 bean 对象的 class 类型、是否是抽象类、构造方法和参数、其它属性等等。当客户端向容器请求相应对象时，容器就会通过这些信息为客户端返回一个完整可用的 bean 实例。 原材料已经准备好（把 BeanDefinition 看着原料），开始做菜吧，等等，你还需要一份菜谱， BeanDefinitionRegistry和 BeanFactory就是这份菜谱，BeanDefinitionRegistry 抽象出 bean 的注册逻辑，而 BeanFactory 则抽象出了 bean 的管理逻辑，而各个 BeanFactory 的实现类就具体承担了 bean 的注册以及管理工作。它们之间的关系就如下图：</p>
+<figure data-type="image" tabindex="2"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress3-1551925778.jpeg" alt="给你一份Spring Boot核心知识清单" title="给你一份Spring Boot核心知识清单" loading="lazy"></figure>
+<p></p>
+<p>DefaultListableBeanFactory作为一个比较通用的 BeanFactory 实现，它同时也实现了 BeanDefinitionRegistry 接口，因此它就承担了 Bean 的注册管理工作。从图中也可以看出，BeanFactory 接口中主要包含 getBean、containBean、getType、getAliases 等管理 bean 的方法，而 BeanDefinitionRegistry 接口则包含 registerBeanDefinition、removeBeanDefinition、getBeanDefinition 等注册管理 BeanDefinition 的方法。 下面通过一段简单的代码来模拟 BeanFactory 底层是如何工作的：</p>
+<pre><code>// 默认容器实现 DefaultListableBeanFactory beanRegistry = new DefaultListableBeanFactory(); // 根据业务对象构造相应的BeanDefinition AbstractBeanDefinition definition = new RootBeanDefinition(Business.class,true); // 将bean定义注册到容器中 beanRegistry.registerBeanDefinition(&quot;beanName&quot;,definition); // 如果有多个bean，还可以指定各个bean之间的依赖关系 // ........ // 然后可以从容器中获取这个bean的实例 // 注意：这里的beanRegistry其实实现了BeanFactory接口，所以可以强转， // 单纯的BeanDefinitionRegistry是无法强制转换到BeanFactory类型的 BeanFactory container = (BeanFactory)beanRegistry; Business business = (Business)container.getBean(&quot;beanName&quot;); 
+</code></pre>
+<p>这段代码仅为了说明 BeanFactory 底层的大致工作流程，实际情况会更加复杂，比如 bean 之间的依赖关系可能定义在外部配置文件(XML/Properties)中、也可能是注解方式。Spring IoC 容器的整个工作流程大致可以分为两个阶段： ①、容器启动阶段 容器启动时，会通过某种途径加载 ConfigurationMetaData。除了代码方式比较直接外，在大部分情况下，容器需要依赖某些工具类，比如： BeanDefinitionReader，BeanDefinitionReader 会对加载的 ConfigurationMetaData进行解析和分析，并将分析后的信息组装为相应的 BeanDefinition，最后把这些保存了 bean 定义的 BeanDefinition，注册到相应的 BeanDefinitionRegistry，这样容器的启动工作就完成了。这个阶段主要完成一些准备性工作，更侧重于 bean 对象管理信息的收集，当然一些验证性或者辅助性的工作也在这一阶段完成。 来看一个简单的例子吧，过往，所有的 bean 都定义在 XML 配置文件中，下面的代码将模拟 BeanFactory 如何从配置文件中加载 bean 的定义以及依赖关系：</p>
+<pre><code>// 通常为BeanDefinitionRegistry的实现类，这里以DeFaultListabeBeanFactory为例 BeanDefinitionRegistry beanRegistry = new DefaultListableBeanFactory();  // XmlBeanDefinitionReader实现了BeanDefinitionReader接口，用于解析XML文件 XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReaderImpl(beanRegistry); // 加载配置文件 beanDefinitionReader.loadBeanDefinitions(&quot;classpath:spring-bean.xml&quot;); // 从容器中获取bean实例 BeanFactory container = (BeanFactory)beanRegistry; Business business = (Business)container.getBean(&quot;beanName&quot;); 
+</code></pre>
+<p>②、Bean的实例化阶段 经过第一阶段，所有 bean 定义都通过 BeanDefinition 的方式注册到 BeanDefinitionRegistry 中，当某个请求通过容器的 getBean 方法请求某个对象，或者因为依赖关系容器需要隐式的调用 getBean 时，就会触发第二阶段的活动：容器会首先检查所请求的对象之前是否已经实例化完成。如果没有，则会根据注册的 BeanDefinition 所提供的信息实例化被请求对象，并为其注入依赖。当该对象装配完毕后，容器会立即将其返回给请求方法使用。 BeanFactory 只是 Spring IoC 容器的一种实现，如果没有特殊指定，它采用采用延迟初始化策略：只有当访问容器中的某个对象时，才对该对象进行初始化和依赖注入操作。而在实际场景下，我们更多的使用另外一种类型的容器： ApplicationContext，它构建在 BeanFactory 之上，属于更高级的容器，除了具有 BeanFactory 的所有能力之外，还提供对事件监听机制以及国际化的支持等。它管理的 bean，在容器启动时全部完成初始化和依赖注入操作。 <strong>1.2、Spring容器扩展机制</strong> IoC 容器负责管理容器中所有bean的生命周期，而在 bean 生命周期的不同阶段，Spring 提供了不同的扩展点来改变 bean 的命运。在容器的启动阶段， BeanFactoryPostProcessor允许我们在容器实例化相应对象之前，对注册到容器的 BeanDefinition 所保存的信息做一些额外的操作，比如修改 bean 定义的某些属性或者增加其他信息等。 如果要自定义扩展类，通常需要实现 org.springframework.beans.factory.config.BeanFactoryPostProcessor接口，与此同时，因为容器中可能有多个BeanFactoryPostProcessor，可能还需要实现 org.springframework.core.Ordered接口，以保证BeanFactoryPostProcessor按照顺序执行。Spring提供了为数不多的BeanFactoryPostProcessor实现，我们以 PropertyPlaceholderConfigurer来说明其大致的工作流程。 在Spring项目的XML配置文件中，经常可以看到许多配置项的值使用占位符，而将占位符所代表的值单独配置到独立的properties文件，这样可以将散落在不同XML文件中的配置集中管理，而且也方便运维根据不同的环境进行配置不同的值。这个非常实用的功能就是由PropertyPlaceholderConfigurer负责实现的。 根据前文，当BeanFactory在第一阶段加载完所有配置信息时，BeanFactory中保存的对象的属性还是以占位符方式存在的，比如 ${jdbc.mysql.url}。当PropertyPlaceholderConfigurer作为BeanFactoryPostProcessor被应用时，它会使用properties配置文件中的值来替换相应的BeanDefinition中占位符所表示的属性值。当需要实例化bean时，bean定义中的属性值就已经被替换成我们配置的值。当然其实现比上面描述的要复杂一些，这里仅说明其大致工作原理，更详细的实现可以参考其源码。 与之相似的，还有 BeanPostProcessor，其存在于对象实例化阶段。跟BeanFactoryPostProcessor类似，它会处理容器内所有符合条件并且已经实例化后的对象。简单的对比，BeanFactoryPostProcessor处理bean的定义，而BeanPostProcessor则处理bean完成实例化后的对象。BeanPostProcessor定义了两个接口：</p>
+<pre><code>public interface BeanPostProcessor {     // 前置处理     Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException;     // 后置处理     Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException; } 
+</code></pre>
+<p>为了理解这两个方法执行的时机，简单的了解下bean的整个生命周期：</p>
+<figure data-type="image" tabindex="3"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress5-1551925779.jpeg" alt="给你一份Spring Boot核心知识清单" title="给你一份Spring Boot核心知识清单" loading="lazy"></figure>
+<p></p>
+<p>postProcessBeforeInitialization()方法与 postProcessAfterInitialization()分别对应图中前置处理和后置处理两个步骤将执行的方法。这两个方法中都传入了bean对象实例的引用，为扩展容器的对象实例化过程提供了很大便利，在这儿几乎可以对传入的实例执行任何操作。注解、AOP等功能的实现均大量使用了 BeanPostProcessor，比如有一个自定义注解，你完全可以实现BeanPostProcessor的接口，在其中判断bean对象的脑袋上是否有该注解，如果有，你可以对这个bean实例执行任何操作，想想是不是非常的简单？ 再来看一个更常见的例子，在Spring中经常能够看到各种各样的Aware接口，其作用就是在对象实例化完成以后将Aware接口定义中规定的依赖注入到当前实例中。比如最常见的 ApplicationContextAware接口，实现了这个接口的类都可以获取到一个ApplicationContext对象。当容器中每个对象的实例化过程走到BeanPostProcessor前置处理这一步时，容器会检测到之前注册到容器的ApplicationContextAwareProcessor，然后就会调用其postProcessBeforeInitialization()方法，检查并设置Aware相关依赖。看看代码吧，是不是很简单：</p>
+<pre><code>// 代码来自：org.springframework.context.support.ApplicationContextAwareProcessor // 其postProcessBeforeInitialization方法调用了invokeAwareInterfaces方法 private void invokeAwareInterfaces(Object bean) {     if (bean instanceof EnvironmentAware) {         ((EnvironmentAware) bean).setEnvironment(this.applicationContext.getEnvironment());     }     if (bean instanceof ApplicationContextAware) {         ((ApplicationContextAware) bean).setApplicationContext(this.applicationContext);     }     // ...... } 
+</code></pre>
+<p>最后总结一下，本小节内容和你一起回顾了Spring容器的部分核心内容，限于篇幅不能写更多，但理解这部分内容，足以让您轻松理解Spring Boot的启动原理，如果在后续的学习过程中遇到一些晦涩难懂的知识，再回过头来看看Spring的核心知识，也许有意想不到的效果。也许Spring Boot的中文资料很少，但Spring的中文资料和书籍有太多太多，总有东西能给你启发。</p>
+<h2 id="二-夯实基础javaconfig与常见annotation"><strong>二、夯实基础：JavaConfig与常见Annotation</strong></h2>
+<p><strong>2.1、JavaConfig</strong> 我们知道 bean是Spring IOC中非常核心的概念，Spring容器负责bean的生命周期的管理。在最初，Spring使用XML配置文件的方式来描述bean的定义以及相互间的依赖关系，但随着Spring的发展，越来越多的人对这种方式表示不满，因为Spring项目的所有业务类均以bean的形式配置在XML文件中，造成了大量的XML文件，使项目变得复杂且难以管理。 后来，基于纯Java Annotation依赖注入框架 Guice出世，其性能明显优于采用XML方式的Spring，甚至有部分人认为， Guice可以完全取代Spring（ Guice仅是一个轻量级IOC框架，取代Spring还差的挺远）。正是这样的危机感，促使Spring及社区推出并持续完善了 JavaConfig子项目，它基于Java代码和Annotation注解来描述bean之间的依赖绑定关系。比如，下面是使用XML配置方式来描述bean的定义：</p>
+<pre><code>&lt;bean id=&quot;bookService&quot; class=&quot;cn.moondev.service.BookServiceImpl&quot;&gt;&lt;/bean&gt; 
+</code></pre>
+<p>而基于JavaConfig的配置形式是这样的：</p>
+<pre><code>@Configuration public class MoonBookConfiguration {     // 任何标志了@Bean的方法，其返回值将作为一个bean注册到Spring的IOC容器中     // 方法名默认成为该bean定义的id     @Bean     public BookService bookService() {         return new BookServiceImpl();     } } 
+</code></pre>
+<p>如果两个bean之间有依赖关系的话，在XML配置中应该是这样：</p>
+<pre><code>&lt;bean id=&quot;bookService&quot; class=&quot;cn.moondev.service.BookServiceImpl&quot;&gt;     &lt;property name=&quot;dependencyService&quot; ref=&quot;dependencyService&quot;/&gt; &lt;/bean&gt; &lt;bean id=&quot;otherService&quot; class=&quot;cn.moondev.service.OtherServiceImpl&quot;&gt;     &lt;property name=&quot;dependencyService&quot; ref=&quot;dependencyService&quot;/&gt; &lt;/bean&gt; &lt;bean id=&quot;dependencyService&quot; class=&quot;DependencyServiceImpl&quot;/&gt; 
+</code></pre>
+<p>而在JavaConfig中则是这样：</p>
+<pre><code>@Configuration public class MoonBookConfiguration {     // 如果一个bean依赖另一个bean，则直接调用对应JavaConfig类中依赖bean的创建方法即可     // 这里直接调用dependencyService()     @Bean     public BookService bookService() {         return new BookServiceImpl(dependencyService());     }     @Bean     public OtherService otherService() {         return new OtherServiceImpl(dependencyService());     }     @Bean     public DependencyService dependencyService() {         return new DependencyServiceImpl();     } } 
+</code></pre>
+<p>你可能注意到这个示例中，有两个bean都依赖于dependencyService，也就是说当初始化bookService时会调用 dependencyService()，在初始化otherService时也会调用 dependencyService()，那么问题来了？这时候IOC容器中是有一个dependencyService实例还是两个？这个问题留着大家思考吧，这里不再赘述。 2.2、@ComponentScan @ComponentScan注解对应XML配置形式中的 <a href="context:component-scan">context:component-scan</a>元素，表示启用组件扫描，Spring会自动扫描所有通过注解配置的bean，然后将其注册到IOC容器中。我们可以通过 basePackages等属性来指定 @ComponentScan自动扫描的范围，如果不指定，默认从声明 @ComponentScan所在类的 package进行扫描。正因为如此，SpringBoot的启动类都默认在 src/main/java下。 <strong>2.3、@Import</strong> @Import注解用于导入配置类，举个简单的例子：</p>
+<pre><code>@Configuration public class MoonBookConfiguration {     @Bean     public BookService bookService() {         return new BookServiceImpl();     } } 
+</code></pre>
+<p>现在有另外一个配置类，比如： MoonUserConfiguration，这个配置类中有一个bean依赖于 MoonBookConfiguration中的bookService，如何将这两个bean组合在一起？借助 @Import即可：</p>
+<pre><code>@Configuration // 可以同时导入多个配置类，比如：@Import({A.class,B.class}) @Import(MoonBookConfiguration.class) public class MoonUserConfiguration {     @Bean     public UserService userService(BookService bookService) {         return new BookServiceImpl(bookService);     } } 
+</code></pre>
+<p>需要注意的是，在4.2之前， @Import注解只支持导入配置类，但是在4.2之后，它支持导入普通类，并将这个类作为一个bean的定义注册到IOC容器中。 <strong>2.4、@Conditional</strong> @Conditional注解表示在满足某种条件后才初始化一个bean或者启用某些配置。它一般用在由 @Component、 @Service、 @Configuration等注解标识的类上面，或者由 @Bean标记的方法上。如果一个 @Configuration类标记了 @Conditional，则该类中所有标识了 @Bean的方法和 @Import注解导入的相关类将遵从这些条件。 在Spring里可以很方便的编写你自己的条件类，所要做的就是实现 Condition接口，并覆盖它的 matches()方法。举个例子，下面的简单条件类表示只有在 Classpath里存在 JdbcTemplate类时才生效：</p>
+<pre><code>public class JdbcTemplateCondition implements Condition {     @Override     public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {         try {         conditionContext.getClassLoader().loadClass(&quot;org.springframework.jdbc.core.JdbcTemplate&quot;);             return true;         } catch (ClassNotFoundException e) {             e.printStackTrace();         }         return false;     } } 
+</code></pre>
+<p>当你用Java来声明bean的时候，可以使用这个自定义条件类：</p>
+<pre><code>@Conditional(JdbcTemplateCondition.class) @Service public MyService service() {     ...... } 
+</code></pre>
+<p>这个例子中只有当 JdbcTemplateCondition类的条件成立时才会创建MyService这个bean。也就是说MyService这bean的创建条件是 classpath里面包含 JdbcTemplate，否则这个bean的声明就会被忽略掉。 SpringBoot定义了很多有趣的条件，并把他们运用到了配置类上，这些配置类构成了 SpringBoot的自动配置的基础。 SpringBoot运用条件化配置的方法是：定义多个特殊的条件化注解，并将它们用到配置类上。下面列出了 SpringBoot提供的部分条件化注解： <strong>条件化注解配置生效条件</strong>@ConditionalOnBean配置了某个特定bean@ConditionalOnMissingBean没有配置特定的bean@ConditionalOnClassClasspath里有指定的类@ConditionalOnMissingClassClasspath里没有指定的类@ConditionalOnExpression给定的Spring Expression Language表达式计算结果为true@ConditionalOnJavaJava的版本匹配特定指或者一个范围值@ConditionalOnProperty指定的配置属性要有一个明确的值@ConditionalOnResourceClasspath里有指定的资源@ConditionalOnWebApplication这是一个Web应用程序@ConditionalOnNotWebApplication这不是一个Web应用程序 <strong>2.5、@ConfigurationProperties与@EnableConfigurationProperties</strong> 当某些属性的值需要配置的时候，我们一般会在 application.properties文件中新建配置项，然后在bean中使用 @Value注解来获取配置的值，比如下面配置数据源的代码。</p>
+<pre><code>// jdbc config jdbc.mysql.url=jdbc:mysql://localhost:3306/sampledb jdbc.mysql.username=root jdbc.mysql.password=123456 ...... // 配置数据源 @Configuration public class HikariDataSourceConfiguration {     @Value(&quot;jdbc.mysql.url&quot;)     public String url;     @Value(&quot;jdbc.mysql.username&quot;)     public String user;     @Value(&quot;jdbc.mysql.password&quot;)     public String password;          @Bean     public HikariDataSource dataSource() {         HikariConfig hikariConfig = new HikariConfig();         hikariConfig.setJdbcUrl(url);         hikariConfig.setUsername(user);         hikariConfig.setPassword(password);         // 省略部分代码         return new HikariDataSource(hikariConfig);     } } 
+</code></pre>
+<p>使用 @Value注解注入的属性通常都比较简单，如果同一个配置在多个地方使用，也存在不方便维护的问题（考虑下，如果有几十个地方在使用某个配置，而现在你想改下名字，你改怎么做？）。对于更为复杂的配置，Spring Boot提供了更优雅的实现方式，那就是 @ConfigurationProperties注解。我们可以通过下面的方式来改写上面的代码：</p>
+<pre><code>@Component //  还可以通过@PropertySource(&quot;classpath:jdbc.properties&quot;)来指定配置文件 @ConfigurationProperties(&quot;jdbc.mysql&quot;) // 前缀=jdbc.mysql，会在配置文件中寻找jdbc.mysql.*的配置项 pulic class JdbcConfig {     public String url;     public String username;     public String password; } @Configuration public class HikariDataSourceConfiguration {     @AutoWired     public JdbcConfig config;          @Bean     public HikariDataSource dataSource() {         HikariConfig hikariConfig = new HikariConfig();         hikariConfig.setJdbcUrl(config.url);         hikariConfig.setUsername(config.username);         hikariConfig.setPassword(config.password);         // 省略部分代码         return new HikariDataSource(hikariConfig);     } } 
+</code></pre>
+<p>@ConfigurationProperties对于更为复杂的配置，处理起来也是得心应手，比如有如下配置文件：</p>
+<pre><code>#App app.menus[0].title=Home app.menus[0].name=Home app.menus[0].path=/ app.menus[1].title=Login app.menus[1].name=Login app.menus[1].path=/login app.compiler.timeout=5 app.compiler.output-folder=/temp/ app.error=/error/ 
+</code></pre>
+<p>可以定义如下配置类来接收这些属性</p>
+<pre><code>@Component @ConfigurationProperties(&quot;app&quot;) public class AppProperties {     public String error;     public List&lt;Menu&gt; menus = new ArrayList&lt;&gt;();     public Compiler compiler = new Compiler();     public static class Menu {         public String name;         public String path;         public String title;     }     public static class Compiler {         public String timeout;         public String outputFolder;     } } 
+</code></pre>
+<p>@EnableConfigurationProperties注解表示对 @ConfigurationProperties的内嵌支持，默认会将对应Properties Class作为bean注入的IOC容器中，即在相应的Properties类上不用加 @Component注解。</p>
+<h2 id="三-削铁如泥springfactoriesloader详解"><strong>三、削铁如泥：SpringFactoriesLoader详解</strong></h2>
+<p>JVM提供了3种类加载器： BootstrapClassLoader、 ExtClassLoader、 AppClassLoader分别加载Java核心类库、扩展类库以及应用的类路径( CLASSPATH)下的类库。JVM通过双亲委派模型进行类的加载，我们也可以通过继承 java.lang.classloader实现自己的类加载器。 何为双亲委派模型？当一个类加载器收到类加载任务时，会先交给自己的父加载器去完成，因此最终加载任务都会传递到最顶层的BootstrapClassLoader，只有当父加载器无法完成加载任务时，才会尝试自己来加载。 采用双亲委派模型的一个好处是保证使用不同类加载器最终得到的都是同一个对象，这样就可以保证Java 核心库的类型安全，比如，加载位于rt.jar包中的 java.lang.Object类，不管是哪个加载器加载这个类，最终都是委托给顶层的BootstrapClassLoader来加载的，这样就可以保证任何的类加载器最终得到的都是同样一个Object对象。查看ClassLoader的源码，对双亲委派模型会有更直观的认识：</p>
+<pre><code>protected Class&lt;?&gt; loadClass(String name, boolean resolve) {     synchronized (getClassLoadingLock(name)) {     // 首先，检查该类是否已经被加载，如果从JVM缓存中找到该类，则直接返回     Class&lt;?&gt; c = findLoadedClass(name);     if (c == null) {         try {             // 遵循双亲委派的模型，首先会通过递归从父加载器开始找，             // 直到父类加载器是BootstrapClassLoader为止             if (parent != null) {                 c = parent.loadClass(name, false);             } else {                 c = findBootstrapClassOrNull(name);             }         } catch (ClassNotFoundException e) {}         if (c == null) {             // 如果还找不到，尝试通过findClass方法去寻找             // findClass是留给开发者自己实现的，也就是说             // 自定义类加载器时，重写此方法即可            c = findClass(name);         }     }     if (resolve) {         resolveClass(c);     }     return c;     } } 
+</code></pre>
+<p>但双亲委派模型并不能解决所有的类加载器问题，比如，Java 提供了很多服务提供者接口( ServiceProviderInterface，SPI)，允许第三方为这些接口提供实现。常见的 SPI 有 JDBC、JNDI、JAXP 等，这些SPI的接口由核心类库提供，却由第三方实现，这样就存在一个问题：SPI 的接口是 Java 核心库的一部分，是由BootstrapClassLoader加载的；SPI实现的Java类一般是由AppClassLoader来加载的。BootstrapClassLoader是无法找到 SPI 的实现类的，因为它只加载Java的核心库。它也不能代理给AppClassLoader，因为它是最顶层的类加载器。也就是说，双亲委派模型并不能解决这个问题。 线程上下文类加载器( ContextClassLoader)正好解决了这个问题。从名称上看，可能会误解为它是一种新的类加载器，实际上，它仅仅是Thread类的一个变量而已，可以通过 setContextClassLoader(ClassLoadercl)和 getContextClassLoader()来设置和获取该对象。如果不做任何的设置，Java应用的线程的上下文类加载器默认就是AppClassLoader。在核心类库使用SPI接口时，传递的类加载器使用线程上下文类加载器，就可以成功的加载到SPI实现的类。线程上下文类加载器在很多SPI的实现中都会用到。但在JDBC中，你可能会看到一种更直接的实现方式，比如，JDBC驱动管理 java.sql.Driver中的 loadInitialDrivers()方法中，你可以直接看到JDK是如何加载驱动的：</p>
+<pre><code>for (String aDriver : driversList) {     try {         // 直接使用AppClassLoader         Class.forName(aDriver, true, ClassLoader.getSystemClassLoader());     } catch (Exception ex) {         println(&quot;DriverManager.Initialize: load failed: &quot; + ex);     } } 
+</code></pre>
+<p>其实讲解线程上下文类加载器，最主要是让大家在看到 Thread.currentThread().getClassLoader()和 Thread.currentThread().getContextClassLoader()时不会一脸懵逼，这两者除了在许多底层框架中取得的ClassLoader可能会有所不同外，其他大多数业务场景下都是一样的，大家只要知道它是为了解决什么问题而存在的即可。 类加载器除了加载class外，还有一个非常重要功能，就是加载资源，它可以从jar包中读取任何资源文件，比如， ClassLoader.getResources(Stringname)方法就是用于读取jar包中的资源文件，其代码如下：</p>
+<pre><code>public Enumeration&lt;URL&gt; getResources(String name) throws IOException {     Enumeration&lt;URL&gt;[] tmp = (Enumeration&lt;URL&gt;[]) new Enumeration&lt;?&gt;[2];     if (parent != null) {         tmp[0] = parent.getResources(name);     } else {         tmp[0] = getBootstrapResources(name);     }     tmp[1] = findResources(name);     return new CompoundEnumeration&lt;&gt;(tmp); } 
+</code></pre>
+<p>是不是觉得有点眼熟，不错，它的逻辑其实跟类加载的逻辑是一样的，首先判断父类加载器是否为空，不为空则委托父类加载器执行资源查找任务，直到BootstrapClassLoader，最后才轮到自己查找。而不同的类加载器负责扫描不同路径下的jar包，就如同加载class一样，最后会扫描所有的jar包，找到符合条件的资源文件。 类加载器的 findResources(name)方法会遍历其负责加载的所有jar包，找到jar包中名称为name的资源文件，这里的资源可以是任何文件，甚至是.class文件，比如下面的示例，用于查找Array.class文件：</p>
+<pre><code>// 寻找Array.class文件 public static void main(String[] args) throws Exception{     // Array.class的完整路径     String name = &quot;java/sql/Array.class&quot;;     Enumeration&lt;URL&gt; urls = Thread.currentThread().getContextClassLoader().getResources(name);     while (urls.hasMoreElements()) {         URL url = urls.nextElement();         System.out.println(url.toString());     } } 
+</code></pre>
+<p>运行后可以得到如下结果：</p>
+<pre><code>$JAVA_HOME/jre/lib/rt.jar!/java/sql/Array.class 
+</code></pre>
+<p>根据资源文件的URL，可以构造相应的文件来读取资源内容。 看到这里，你可能会感到挺奇怪的，你不是要详解 SpringFactoriesLoader吗？上来讲了一堆ClassLoader是几个意思？看下它的源码你就知道了：</p>
+<pre><code>public static final String FACTORIES_RESOURCE_LOCATION = &quot;META-INF/spring.factories&quot;; // spring.factories文件的格式为：key=value1,value2,value3 // 从所有的jar包中找到META-INF/spring.factories文件 // 然后从文件中解析出key=factoryClass类名称的所有value值 public static List&lt;String&gt; loadFactoryNames(Class&lt;?&gt; factoryClass, ClassLoader classLoader) {     String factoryClassName = factoryClass.getName();     // 取得资源文件的URL     Enumeration&lt;URL&gt; urls = (classLoader != null ? classLoader.getResources(FACTORIES_RESOURCE_LOCATION) : ClassLoader.getSystemResources(FACTORIES_RESOURCE_LOCATION));     List&lt;String&gt; result = new ArrayList&lt;String&gt;();     // 遍历所有的URL     while (urls.hasMoreElements()) {         URL url = urls.nextElement();         // 根据资源文件URL解析properties文件         Properties properties = PropertiesLoaderUtils.loadProperties(new UrlResource(url));         String factoryClassNames = properties.getProperty(factoryClassName);         // 组装数据，并返回         result.addAll(Arrays.asList(StringUtils.commaDelimitedListToStringArray(factoryClassNames)));     }     return result; } 
+</code></pre>
+<p>有了前面关于ClassLoader的知识，再来理解这段代码，是不是感觉豁然开朗：从 CLASSPATH下的每个Jar包中搜寻所有 META-INF/spring.factories配置文件，然后将解析properties文件，找到指定名称的配置后返回。需要注意的是，其实这里不仅仅是会去ClassPath路径下查找，会扫描所有路径下的Jar包，只不过这个文件只会在Classpath下的jar包中。来简单看下 spring.factories文件的内容吧：</p>
+<pre><code>// 来自 org.springframework.boot.autoconfigure下的META-INF/spring.factories // EnableAutoConfiguration后文会讲到，它用于开启Spring Boot自动配置功能 org.springframework.boot.autoconfigure.EnableAutoConfiguration= org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration, org.springframework.boot.autoconfigure.aop.AopAutoConfiguration, org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration 
+</code></pre>
+<p>执行 loadFactoryNames(EnableAutoConfiguration.class,classLoader)后，得到对应的一组 @Configuration类， 我们就可以通过反射实例化这些类然后注入到IOC容器中，最后容器里就有了一系列标注了 @Configuration的JavaConfig形式的配置类。 这就是 SpringFactoriesLoader，它本质上属于Spring框架私有的一种扩展方案，类似于SPI，Spring Boot在Spring基础上的很多核心功能都是基于此，希望大家可以理解。</p>
+<h2 id="四-另一件武器spring容器的事件监听机制"><strong>四、另一件武器：Spring容器的事件监听机制</strong></h2>
+<p>过去，事件监听机制多用于图形界面编程，比如：<strong>点击</strong>按钮、在文本框<strong>输入</strong>内容等操作被称为事件，而当事件触发时，应用程序作出一定的响应则表示应用监听了这个事件，而在服务器端，事件的监听机制更多的用于异步通知以及监控和异常处理。Java提供了实现事件监听机制的两个基础类：自定义事件类型扩展自 java.util.EventObject、事件的监听器扩展自 java.util.EventListener。来看一个简单的实例：简单的监控一个方法的耗时。 首先定义事件类型，通常的做法是扩展EventObject，随着事件的发生，相应的状态通常都封装在此类中：</p>
+<pre><code>public class MethodMonitorEvent extends EventObject {     // 时间戳，用于记录方法开始执行的时间     public long timestamp;     public MethodMonitorEvent(Object source) {         super(source);     } } 
+</code></pre>
+<p>事件发布之后，相应的监听器即可对该类型的事件进行处理，我们可以在方法开始执行之前发布一个begin事件，在方法执行结束之后发布一个end事件，相应地，事件监听器需要提供方法对这两种情况下接收到的事件进行处理：</p>
+<pre><code>// 1、定义事件监听接口 public interface MethodMonitorEventListener extends EventListener {     // 处理方法执行之前发布的事件     public void onMethodBegin(MethodMonitorEvent event);     // 处理方法结束时发布的事件     public void onMethodEnd(MethodMonitorEvent event); } // 2、事件监听接口的实现：如何处理 public class AbstractMethodMonitorEventListener implements MethodMonitorEventListener {     @Override     public void onMethodBegin(MethodMonitorEvent event) {         // 记录方法开始执行时的时间         event.timestamp = System.currentTimeMillis();     }     @Override     public void onMethodEnd(MethodMonitorEvent event) {         // 计算方法耗时         long duration = System.currentTimeMillis() - event.timestamp;         System.out.println(&quot;耗时：&quot; + duration);     } } 
+</code></pre>
+<p>事件监听器接口针对不同的事件发布实际提供相应的处理方法定义，最重要的是，其方法只接收MethodMonitorEvent参数，说明这个监听器类只负责监听器对应的事件并进行处理。有了事件和监听器，剩下的就是发布事件，然后让相应的监听器监听并处理。通常情况，我们会有一个事件发布者，它本身作为事件源，在合适的时机，将相应的事件发布给对应的事件监听器：</p>
+<pre><code>public class MethodMonitorEventPublisher {     private List&lt;MethodMonitorEventListener&gt; listeners = new ArrayList&lt;MethodMonitorEventListener&gt;();     public void methodMonitor() {         MethodMonitorEvent eventObject = new MethodMonitorEvent(this);         publishEvent(&quot;begin&quot;,eventObject);         // 模拟方法执行：休眠5秒钟         TimeUnit.SECONDS.sleep(5);         publishEvent(&quot;end&quot;,eventObject);     }     private void publishEvent(String status,MethodMonitorEvent event) {         // 避免在事件处理期间，监听器被移除，这里为了安全做一个复制操作         List&lt;MethodMonitorEventListener&gt; copyListeners =  new ArrayList&lt;MethodMonitorEventListener&gt;(listeners);         for (MethodMonitorEventListener listener : copyListeners) {             if (&quot;begin&quot;.equals(status)) {                 listener.onMethodBegin(event);             } else {                 listener.onMethodEnd(event);             }         }     }          public static void main(String[] args) {         MethodMonitorEventPublisher publisher = new MethodMonitorEventPublisher();         publisher.addEventListener(new AbstractMethodMonitorEventListener());         publisher.methodMonitor();     }     // 省略实现     public void addEventListener(MethodMonitorEventListener listener) {}     public void removeEventListener(MethodMonitorEventListener listener) {}     public void removeAllListeners() {} 
+</code></pre>
+<p>对于事件发布者（事件源）通常需要关注两点：</p>
+<ol>
+<li>在合适的时机发布事件。此例中的methodMonitor()方法是事件发布的源头，其在方法执行之前和结束之后两个时间点发布MethodMonitorEvent事件，每个时间点发布的事件都会传给相应的监听器进行处理。在具体实现时需要注意的是，事件发布是顺序执行，为了不影响处理性能，事件监听器的处理逻辑应尽量简单。</li>
+<li>事件监听器的管理。publisher类中提供了事件监听器的注册与移除方法，这样客户端可以根据实际情况决定是否需要注册新的监听器或者移除某个监听器。如果这里没有提供remove方法，那么注册的监听器示例将一直被MethodMonitorEventPublisher引用，即使已经废弃不用了，也依然在发布者的监听器列表中，这会导致隐性的内存泄漏。</li>
+</ol>
+<p>Spring容器内的事件监听机制 Spring的ApplicationContext容器内部中的所有事件类型均继承自 org.springframework.context.AppliationEvent，容器中的所有监听器都实现 org.springframework.context.ApplicationListener接口，并且以bean的形式注册在容器中。一旦在容器内发布ApplicationEvent及其子类型的事件，注册到容器的ApplicationListener就会对这些事件进行处理。 你应该已经猜到是怎么回事了。 ApplicationEvent继承自EventObject，Spring提供了一些默认的实现，比如： ContextClosedEvent表示容器在即将关闭时发布的事件类型， ContextRefreshedEvent表示容器在初始化或者刷新的时候发布的事件类型...... 容器内部使用ApplicationListener作为事件监听器接口定义，它继承自EventListener。ApplicationContext容器在启动时，会自动识别并加载EventListener类型的bean，一旦容器内有事件发布，将通知这些注册到容器的EventListener。 ApplicationContext接口继承了ApplicationEventPublisher接口，该接口提供了 voidpublishEvent(ApplicationEventevent)方法定义，不难看出，ApplicationContext容器担当的就是事件发布者的角色。如果有兴趣可以查看 AbstractApplicationContext.publishEvent(ApplicationEventevent)方法的源码：ApplicationContext将事件的发布以及监听器的管理工作委托给 ApplicationEventMulticaster接口的实现类。在容器启动时，会检查容器内是否存在名为applicationEventMulticaster的ApplicationEventMulticaster对象实例。如果有就使用其提供的实现，没有就默认初始化一个SimpleApplicationEventMulticaster作为实现。 最后，如果我们业务需要在容器内部发布事件，只需要为其注入ApplicationEventPublisher依赖即可：实现ApplicationEventPublisherAware接口或者ApplicationContextAware接口(Aware接口相关内容请回顾上文)。</p>
+<h2 id="五-出神入化揭秘自动配置原理"><strong>五、出神入化：揭秘自动配置原理</strong></h2>
+<p>典型的Spring Boot应用的启动类一般均位于 src/main/java根路径下，比如 MoonApplication类：</p>
+<pre><code>@SpringBootApplication public class MoonApplication {     public static void main(String[] args) {         SpringApplication.run(MoonApplication.class, args);     } } 
+</code></pre>
+<p>其中 @SpringBootApplication开启组件扫描和自动配置，而 SpringApplication.run则负责启动引导应用程序。 @SpringBootApplication是一个复合 Annotation，它将三个有用的注解组合在一起：</p>
+<pre><code>@Target(ElementType.TYPE) @Retention(RetentionPolicy.RUNTIME) @Documented @Inherited @SpringBootConfiguration @EnableAutoConfiguration @ComponentScan(excludeFilters = {         @Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class),         @Filter(type = FilterType.CUSTOM, classes = AutoConfigurationExcludeFilter.class) }) public @interface SpringBootApplication {     // ...... } 
+</code></pre>
+<p>@SpringBootConfiguration就是 @Configuration，它是Spring框架的注解，标明该类是一个 JavaConfig配置类。而 @ComponentScan启用组件扫描，前文已经详细讲解过，这里着重关注 @EnableAutoConfiguration。 @EnableAutoConfiguration注解表示开启Spring Boot自动配置功能，Spring Boot会根据应用的依赖、自定义的bean、classpath下有没有某个类 等等因素来猜测你需要的bean，然后注册到IOC容器中。那 @EnableAutoConfiguration是如何推算出你的需求？首先看下它的定义：</p>
+<pre><code>@Target(ElementType.TYPE) @Retention(RetentionPolicy.RUNTIME) @Documented @Inherited @AutoConfigurationPackage @Import(EnableAutoConfigurationImportSelector.class) public @interface EnableAutoConfiguration {     // ...... } 
+</code></pre>
+<p>你的关注点应该在 @Import(EnableAutoConfigurationImportSelector.class)上了，前文说过， @Import注解用于导入类，并将这个类作为一个bean的定义注册到容器中，这里它将把 EnableAutoConfigurationImportSelector作为bean注入到容器中，而这个类会将所有符合条件的@Configuration配置都加载到容器中，看看它的代码：</p>
+<pre><code>public String[] selectImports(AnnotationMetadata annotationMetadata) {     // 省略了大部分代码，保留一句核心代码     // 注意：SpringBoot最近版本中，这句代码被封装在一个单独的方法中     // SpringFactoriesLoader相关知识请参考前文     List&lt;String&gt; factories = new ArrayList&lt;String&gt;(new LinkedHashSet&lt;String&gt;(           SpringFactoriesLoader.loadFactoryNames(EnableAutoConfiguration.class, this.beanClassLoader))); } 
+</code></pre>
+<p>这个类会扫描所有的jar包，将所有符合条件的@Configuration配置类注入的容器中，何为符合条件，看看 META-INF/spring.factories的文件内容：</p>
+<pre><code>// 来自 org.springframework.boot.autoconfigure下的META-INF/spring.factories // 配置的key = EnableAutoConfiguration，与代码中一致 org.springframework.boot.autoconfigure.EnableAutoConfiguration= org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.aop.AopAutoConfiguration, org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration ..... 
+</code></pre>
+<p>以 DataSourceAutoConfiguration为例，看看Spring Boot是如何自动配置的：</p>
+<pre><code>@Configuration @ConditionalOnClass({ DataSource.class, EmbeddedDatabaseType.class }) @EnableConfigurationProperties(DataSourceProperties.class) @Import({ Registrar.class, DataSourcePoolMetadataProvidersConfiguration.class }) public class DataSourceAutoConfiguration { } 
+</code></pre>
+<p>分别说一说：</p>
+<ul>
+<li>
+<p>@ConditionalOnClass({DataSource.class,EmbeddedDatabaseType.class})：当Classpath中存在DataSource或者EmbeddedDatabaseType类时才启用这个配置，否则这个配置将被忽略。</p>
+</li>
+<li>
+<p>@EnableConfigurationProperties(DataSourceProperties.class)：将DataSource的默认配置类注入到IOC容器中，DataSourceproperties定义为：</p>
+<p>// 提供对datasource配置信息的支持，所有的配置前缀为：spring.datasource @ConfigurationProperties(prefix = &quot;spring.datasource&quot;) public class DataSourceProperties  {     private ClassLoader classLoader;     private Environment environment;     private String name = &quot;testdb&quot;;     ...... }</p>
+</li>
+<li>
+<p>@Import({Registrar.class,DataSourcePoolMetadataProvidersConfiguration.class})：导入其他额外的配置，就以 DataSourcePoolMetadataProvidersConfiguration为例吧。</p>
+<p>@Configuration public class DataSourcePoolMetadataProvidersConfiguration {     @Configuration     @ConditionalOnClass(org.apache.tomcat.jdbc.pool.DataSource.class)     static class TomcatDataSourcePoolMetadataProviderConfiguration {         @Bean         public DataSourcePoolMetadataProvider tomcatPoolDataSourceMetadataProvider() {             .....         }     }   ...... }</p>
+</li>
+</ul>
+<p>DataSourcePoolMetadataProvidersConfiguration是数据库连接池提供者的一个配置类，即Classpath中存在 org.apache.tomcat.jdbc.pool.DataSource.class，则使用tomcat-jdbc连接池，如果Classpath中存在 HikariDataSource.class则使用Hikari连接池。 这里仅描述了DataSourceAutoConfiguration的冰山一角，但足以说明Spring Boot如何利用条件话配置来实现自动配置的。回顾一下， @EnableAutoConfiguration中导入了EnableAutoConfigurationImportSelector类，而这个类的 selectImports()通过SpringFactoriesLoader得到了大量的配置类，而每一个配置类则根据条件化配置来做出决策，以实现自动配置。 整个流程很清晰，但漏了一个大问题： EnableAutoConfigurationImportSelector.selectImports()是何时执行的？其实这个方法会在容器启动过程中执行： AbstractApplicationContext.refresh()，更多的细节在下一小节中说明。</p>
+<h2 id="六-启动引导spring-boot应用启动的秘密"><strong>六、启动引导：Spring Boot应用启动的秘密</strong></h2>
+<p><strong>6.1 SpringApplication初始化</strong> SpringBoot整个启动流程分为两个步骤：初始化一个SpringApplication对象、执行该对象的run方法。看下SpringApplication的初始化流程，SpringApplication的构造方法中调用initialize(Object[] sources)方法，其代码如下：</p>
+<pre><code>private void initialize(Object[] sources) {      if (sources != null &amp;&amp; sources.length &gt; 0) {          this.sources.addAll(Arrays.asList(sources));      }      // 判断是否是Web项目      this.webEnvironment = deduceWebEnvironment();      setInitializers((Collection) getSpringFactoriesInstances(ApplicationContextInitializer.class));      setListeners((Collection) getSpringFactoriesInstances(ApplicationListener.class));      // 找到入口类      this.mainApplicationClass = deduceMainApplicationClass(); } 
+</code></pre>
+<p>初始化流程中最重要的就是通过SpringFactoriesLoader找到 spring.factories文件中配置的 ApplicationContextInitializer和 ApplicationListener两个接口的实现类名称，以便后期构造相应的实例。 ApplicationContextInitializer的主要目的是在 ConfigurableApplicationContext做refresh之前，对ConfigurableApplicationContext实例做进一步的设置或处理。ConfigurableApplicationContext继承自ApplicationContext，其主要提供了对ApplicationContext进行设置的能力。 实现一个ApplicationContextInitializer非常简单，因为它只有一个方法，但大多数情况下我们没有必要自定义一个ApplicationContextInitializer，即便是Spring Boot框架，它默认也只是注册了两个实现，毕竟Spring的容器已经非常成熟和稳定，你没有必要来改变它。 而 ApplicationListener的目的就没什么好说的了，它是Spring框架对Java事件监听机制的一种框架实现，具体内容在前文Spring事件监听机制这个小节有详细讲解。这里主要说说，如果你想为Spring Boot应用添加监听器，该如何实现？ Spring Boot提供两种方式来添加自定义监听器：</p>
+<ul>
+<li>
+<p>通过 SpringApplication.addListeners(ApplicationListener<?>...listeners)或者 SpringApplication.setListeners(Collection<?extendsApplicationListener<?>&gt;listeners)两个方法来添加一个或者多个自定义监听器</p>
+</li>
+<li>
+<p>既然SpringApplication的初始化流程中已经从 spring.factories中获取到 ApplicationListener的实现类，那么我们直接在自己的jar包的 META-INF/spring.factories文件中新增配置即可：</p>
+<p>org.springframework.context.ApplicationListener= cn.moondev.listeners.xxxxListener</p>
+</li>
+</ul>
+<p>关于SpringApplication的初始化，我们就说这么多。 <strong>6.2 Spring Boot启动流程</strong> Spring Boot应用的整个启动流程都封装在SpringApplication.run方法中，其整个流程真的是太长太长了，但本质上就是在Spring容器启动的基础上做了大量的扩展，按照这个思路来看看源码：</p>
+<pre><code>public ConfigurableApplicationContext run(String... args) {         StopWatch stopWatch = new StopWatch();         stopWatch.start();         ConfigurableApplicationContext context = null;         FailureAnalyzers analyzers = null;         configureHeadlessProperty();         // ①         SpringApplicationRunListeners listeners = getRunListeners(args);         listeners.starting();         try {             // ②             ApplicationArguments applicationArguments = new DefaultApplicationArguments(args);             ConfigurableEnvironment environment = prepareEnvironment(listeners,applicationArguments);             // ③             Banner printedBanner = printBanner(environment);             // ④             context = createApplicationContext();             // ⑤             analyzers = new FailureAnalyzers(context);             // ⑥             prepareContext(context, environment, listeners, applicationArguments,printedBanner);             // ⑦              refreshContext(context);             // ⑧             afterRefresh(context, applicationArguments);             // ⑨             listeners.finished(context, null);             stopWatch.stop();             return context;         }         catch (Throwable ex) {             handleRunFailure(context, listeners, analyzers, ex);             throw new IllegalStateException(ex);         }     } 
+</code></pre>
+<p>① 通过SpringFactoriesLoader查找并加载所有的 SpringApplicationRunListeners，通过调用starting()方法通知所有的SpringApplicationRunListeners：应用开始启动了。SpringApplicationRunListeners其本质上就是一个事件发布者，它在SpringBoot应用启动的不同时间点发布不同应用事件类型(ApplicationEvent)，如果有哪些事件监听者(ApplicationListener)对这些事件感兴趣，则可以接收并且处理。还记得初始化流程中，SpringApplication加载了一系列ApplicationListener吗？这个启动流程中没有发现有发布事件的代码，其实都已经在SpringApplicationRunListeners这儿实现了。 简单的分析一下其实现流程，首先看下SpringApplicationRunListener的源码：</p>
+<pre><code>public interface SpringApplicationRunListener {     // 运行run方法时立即调用此方法，可以用户非常早期的初始化工作     void starting();          // Environment准备好后，并且ApplicationContext创建之前调用     void environmentPrepared(ConfigurableEnvironment environment);     // ApplicationContext创建好后立即调用     void contextPrepared(ConfigurableApplicationContext context);     // ApplicationContext加载完成，在refresh之前调用     void contextLoaded(ConfigurableApplicationContext context);     // 当run方法结束之前调用     void finished(ConfigurableApplicationContext context, Throwable exception); } 
+</code></pre>
+<p>SpringApplicationRunListener只有一个实现类： EventPublishingRunListener。①处的代码只会获取到一个EventPublishingRunListener的实例，我们来看看starting()方法的内容：</p>
+<pre><code>public void starting() {     // 发布一个ApplicationStartedEvent     this.initialMulticaster.multicastEvent(new ApplicationStartedEvent(this.application, this.args)); } 
+</code></pre>
+<p>顺着这个逻辑，你可以在②处的 prepareEnvironment()方法的源码中找到 listeners.environmentPrepared(environment);即SpringApplicationRunListener接口的第二个方法，那不出你所料， environmentPrepared()又发布了另外一个事件 ApplicationEnvironmentPreparedEvent。接下来会发生什么，就不用我多说了吧。 ② 创建并配置当前应用将要使用的 Environment，Environment用于描述应用程序当前的运行环境，其抽象了两个方面的内容：配置文件(profile)和属性(properties)，开发经验丰富的同学对这两个东西一定不会陌生：不同的环境(eg：生产环境、预发布环境)可以使用不同的配置文件，而属性则可以从配置文件、环境变量、命令行参数等来源获取。因此，当Environment准备好后，在整个应用的任何时候，都可以从Environment中获取资源。 总结起来，②处的两句代码，主要完成以下几件事：</p>
+<ul>
+<li>判断Environment是否存在，不存在就创建（如果是web项目就创建 StandardServletEnvironment，否则创建 StandardEnvironment）</li>
+<li>配置Environment：配置profile以及properties</li>
+<li>调用SpringApplicationRunListener的 environmentPrepared()方法，通知事件监听者：应用的Environment已经准备好</li>
+</ul>
+<p>③、SpringBoot应用在启动时会输出这样的东西：</p>
+<pre><code>  .   ____          _            __ _ _  /\ / ___'_ __ _ _(_)_ __  __ _     ( ( )___ | '_ | '_| | '_ / _` |      \/  ___)| |_)| | | | | || (_| |  ) ) ) )   '  |____| .__|_| |_|_| |___, | / / / /  =========|_|==============|___/=/_/_/_/  :: Spring Boot ::        (v1.5.6.RELEASE) 
+</code></pre>
+<p>如果想把这个东西改成自己的涂鸦，你可以研究以下Banner的实现，这个任务就留给你们吧。 ④、根据是否是web项目，来创建不同的ApplicationContext容器。 ⑤、创建一系列 FailureAnalyzer，创建流程依然是通过SpringFactoriesLoader获取到所有实现FailureAnalyzer接口的class，然后在创建对应的实例。FailureAnalyzer用于分析故障并提供相关诊断信息。 ⑥、初始化ApplicationContext，主要完成以下工作：</p>
+<ul>
+<li>将准备好的Environment设置给ApplicationContext</li>
+<li>遍历调用所有的ApplicationContextInitializer的 initialize()方法来对已经创建好的ApplicationContext进行进一步的处理</li>
+<li>调用SpringApplicationRunListener的 contextPrepared()方法，通知所有的监听者：ApplicationContext已经准备完毕</li>
+<li>将所有的bean加载到容器中</li>
+<li>调用SpringApplicationRunListener的 contextLoaded()方法，通知所有的监听者：ApplicationContext已经装载完毕</li>
+</ul>
+<p>⑦、调用ApplicationContext的 refresh()方法，完成IoC容器可用的最后一道工序。从名字上理解为刷新容器，那何为刷新？就是插手容器的启动，联系一下第一小节的内容。那如何刷新呢？且看下面代码：</p>
+<pre><code>// 摘自refresh()方法中一句代码 invokeBeanFactoryPostProcessors(beanFactory); 
+</code></pre>
+<p>看看这个方法的实现：</p>
+<pre><code>protected void invokeBeanFactoryPostProcessors(ConfigurableListableBeanFactory beanFactory) {     PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(beanFactory, getBeanFactoryPostProcessors());     ...... } 
+</code></pre>
+<p>获取到所有的 BeanFactoryPostProcessor来对容器做一些额外的操作。BeanFactoryPostProcessor允许我们在容器实例化相应对象之前，对注册到容器的BeanDefinition所保存的信息做一些额外的操作。这里的getBeanFactoryPostProcessors()方法可以获取到3个Processor：</p>
+<pre><code>ConfigurationWarningsApplicationContextInitializer$ConfigurationWarningsPostProcessor SharedMetadataReaderFactoryContextInitializer$CachingMetadataReaderFactoryPostProcessor ConfigFileApplicationListener$PropertySourceOrderingPostProcessor 
+</code></pre>
+<p>不是有那么多BeanFactoryPostProcessor的实现类，为什么这儿只有这3个？因为在初始化流程获取到的各种ApplicationContextInitializer和ApplicationListener中，只有上文3个做了类似于如下操作：</p>
+<pre><code>public void initialize(ConfigurableApplicationContext context) {     context.addBeanFactoryPostProcessor(new ConfigurationWarningsPostProcessor(getChecks())); } 
+</code></pre>
+<p>然后你就可以进入到 PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors()方法了，这个方法除了会遍历上面的3个BeanFactoryPostProcessor处理外，还会获取类型为 BeanDefinitionRegistryPostProcessor的bean： org.springframework.context.annotation.internalConfigurationAnnotationProcessor，对应的Class为 ConfigurationClassPostProcessor。 ConfigurationClassPostProcessor用于解析处理各种注解，包括：@Configuration、@ComponentScan、@Import、@PropertySource、@ImportResource、@Bean。当处理 @import注解的时候，就会调用&lt;自动配置&gt;这一小节中的 EnableAutoConfigurationImportSelector.selectImports()来完成自动配置功能。其他的这里不再多讲，如果你有兴趣，可以查阅参考资料6。 ⑧、查找当前context中是否注册有CommandLineRunner和ApplicationRunner，如果有则遍历执行它们。 ⑨、执行所有SpringApplicationRunListener的finished()方法。 这就是Spring Boot的整个启动流程，其核心就是在Spring容器初始化并启动的基础上加入各种扩展点，这些扩展点包括：ApplicationContextInitializer、ApplicationListener以及各种BeanFactoryPostProcessor等等。你对整个流程的细节不必太过关注，甚至没弄明白也没有关系，你只要理解这些扩展点是在何时如何工作的，能让它们为你所用即可。 整个启动流程确实非常复杂，可以查询参考资料中的部分章节和内容，对照着源码，多看看，我想最终你都能弄清楚的。言而总之，Spring才是核心，理解清楚Spring容器的启动流程，那Spring Boot启动流程就不在话下了。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Spring实战拆书--SpringBean]]></title>
+        <id>https://alex.github.io/post/363/</id>
+        <link href="https://alex.github.io/post/363/">
+        </link>
+        <updated>2019-03-01T02:39:23.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>1.准备工作</strong> 请在github上下载源码结合文章阅读，效果更佳 在创建了SpringBoot项目后，我们首先需要开启组件扫描，如下代码所示。 @Configuration <em>//扫描指定包目录</em> @ComponentScan(basePackages=&quot;com.wjc&quot;) public class BeanConfig { ｝ 声明一个测试Bean的接口，全文的主要内容都是通过此接口的实现类完成的  package com.wjc.spring.bean; public interface <strong>Bird</strong> { void <strong>fly</strong>(); void <strong>feed</strong>(); void <strong>twitter</strong>(); void <strong>changeTwiter</strong>(); }</p>
+<hr>
+<p><strong>2.自动装配</strong> 自动装配是最常见的Bean装配形式。 我们首先写一个Bird接口的实现类来展示自动装配，只需一个“@Component”注解即可完成。 package com.wjc.spring.bean.impl; import org.springframework.beans.factory.annotation.Qualifier; import org.springframework.stereotype.Component; import com.wjc.spring.bean.Bird; <em>//这是知更鸟</em> <strong>@Component</strong> public class <strong>Robin</strong> implements <strong>Bird</strong> { private String flyStr =&quot;知更鸟起飞&quot;; private String feedStr = &quot;不想吃东西&quot;; private String twiterStr = &quot;啊啊啊&quot;; <strong>@Override</strong> public void <strong>fly</strong>() { System.out.println(flyStr); } <strong>@Override</strong> public void <strong>feed</strong>() { System.out.println(feedStr); } <strong>@Override</strong> public void <strong>twitter</strong>() { System.out.println(twiterStr); } <strong>@Override</strong> public void <strong>changeTwiter</strong>() { } } 在测试时，我们只需要使用“@Autowired”注解，就可以拿到对应的对象了 通过Junit可以测试装配是否完成  @RunWith(SpringJUnit4ClassRunner.class) @ContextConfiguration(classes=BeanConfig.class) public class BeanTest { @Autowired private Bird bird; <em>//测试1，查看是否自动装配了知更鸟</em> <em>//此时bean.impl只有robin</em> @Test public void BeanTest1() { assertNotNull(bird); } }</p>
+<hr>
+<p><strong>3.处理自动装配的歧义性（@Qualifier）</strong> 试想如果我有2个Bird接口的实现类，spring在装配时是否会因为不知道具体需要哪个实现类而报错？ 此时声明一个“Parrot”，也实现bird接口，运行test方法会如何？ package com.wjc.spring.bean.impl; import org.springframework.beans.factory.annotation.Qualifier; import org.springframework.stereotype.Component; import com.wjc.spring.bean.Bird; <em>//这是鹦鹉</em> <strong>@Component</strong> public class <strong>Parrot</strong> implements <strong>Bird</strong> { private String flyStr =&quot;鹦鹉起飞&quot;; private String feedStr = &quot;啥都吃&quot;; private String twiterStr = &quot;说人话&quot;; <strong>@Override</strong> public void <strong>fly</strong>() { System.out.println(flyStr); } <strong>@Override</strong> public void <strong>feed</strong>() { System.out.println(feedStr); } <strong>@Override</strong> public void <strong>twitter</strong>() { System.out.println(twiterStr); } <strong>@Override</strong> public void <strong>changeTwiter</strong>() { twiterStr = &quot;你好你好&quot;; } } 运行结果如下： org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.wjc.spring.test.BeanTest': Unsatisfied dependency expressed through field 'bird'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.wjc.spring.bean.Bird' available: expected single matching bean but found 5: parrot,quail,robin,Cuckoo1,Cuckoo2 at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject<br>
+(AutowiredAnnotationBeanPostProcessor.java:596)<br>
+可以看到，由于Spring并不知道应该将哪一个实现类注入到bird中，报出了　“UnsatisfiedDependencyException”，我们可以通过注解“@Qualifier(&quot;parrot&quot;)”来解决此问题 <em>//这是鹦鹉</em> @Component @Qualifier(&quot;parrot&quot;) public class Parrot implements Bird { 在获取实现类时使用如下方式，即可获取到自己想要的对象实例了 @Autowired @Qualifier(&quot;parrot&quot;) private Bird parrot; <em>//添加@Qualifier(&quot;parrot&quot;)来解决声明问题</em> @Test public void BeanTest3() { <em>// 此时鹦鹉添加了@Primary</em> parrot.fly(); assertNotNull(parrot); }</p>
+<hr>
+<p><strong>4.Bean的作用域</strong> 已知Spring默认是单例模式，但在多线程高并发的情况下，单例模式其实未必是最佳选择，如果线程A将Bean赋了值，而此时线程B拿取了被A赋值的对象，并返回了对应的结果，此时是不是会出现B返回了预料之外的结果？ 本文简单讨论一下原型模式下Bean的传递，和会发生的问题，具体的各自作用域请百度“spring作用域” 已知Spring作用域如下：singleton / prototype / request / session /global session 我们来看一下如下代码，一个原型模式的对象 package com.wjc.spring.bean.impl; import org.springframework.beans.factory.annotation.Qualifier; import org.springframework.context.annotation.Scope; import org.springframework.stereotype.Component; import com.wjc.spring.bean.Bird; <em>//这是鹌鹑</em> <em>//这个使用原型模式</em> <strong>@Component</strong> <strong>@Qualifier</strong>(&quot;Quail&quot;) <strong>@Scope</strong>(&quot;prototype&quot;) public class <strong>Quail</strong> implements <strong>Bird</strong> { private String flyStr =&quot;鹌鹑起飞&quot;; private String feedStr = &quot;鹌鹑想吃啥就吃啥&quot;; private String twiterStr = &quot;鹌鹑不知道怎么叫&quot;; <strong>@Override</strong> public void <strong>fly</strong>() { <em>// TODO Auto-generated method stub</em> System.out.println(flyStr); } <strong>@Override</strong> public void <strong>feed</strong>() { <em>// TODO Auto-generated method stub</em> System.out.println(feedStr); } <strong>@Override</strong> public void <strong>twitter</strong>() { <em>// TODO Auto-generated method stub</em> System.out.println(twiterStr); } public void <strong>changeTwiter</strong>() { twiterStr = &quot;我大鹌鹑今天就是饿死。。。。&quot;; } } 看下在TEST时他的表现如何： @RunWith(SpringJUnit4ClassRunner.class) @ContextConfiguration(classes=BeanConfig.class) public class BeanTest3 { @Autowired @Qualifier(&quot;Quail&quot;) private Bird bird; @Autowired @Qualifier(&quot;Quail&quot;) private Bird bird2; <em>//测试原型模式与单例的区别</em> @Test public void BeanTest1() { bird.twitter(); bird.changeTwiter(); bird.twitter(); bird2.twitter(); bird2.changeTwiter(); bird2.twitter(); } } 运行结果： 鹌鹑不知道怎么叫 我大鹌鹑今天就是饿死。。。。 鹌鹑不知道怎么叫 我大鹌鹑今天就是饿死。。。。 spring确实将此Bean对象变成了原型模式。那么作用域是否就这么简单的完成了？ 我们看一下如下代码 @Service public class BirdServiceImpl implements BirdService { @Autowired @Qualifier(&quot;Quail&quot;) private Bird bird; public void ScopTest() { bird.twitter(); bird.changeTwiter(); bird.twitter(); } } 运行测试类： @RunWith(SpringJUnit4ClassRunner.class) @ContextConfiguration(classes=BeanConfig.class) public class ServiceTest { @Autowired private BirdService birdService; @Autowired private BirdService birdService2; <em>//测试在Service上添加和不添加@Qualifier(&quot;Quail&quot;)时调用的Bean的区别</em> @Test public void ServiceTest2() { birdService.ScopTest(); birdService2.ScopTest(); } } 运行结果： 鹌鹑不知道怎么叫 我大鹌鹑今天就是饿死。。。。 我大鹌鹑今天就是饿死。。。。 我大鹌鹑今天就是饿死。。。。 ？？？？？？？？原型模式失效了？？？？ 为什么会发生这种情况？因为在此场景下，“BirdServiceImpl”是单例模式的，对Bean的操作不可避免的变成了单例的，如果添加如下代码结果就会完全不一样 @Service @Scope(&quot;prototype&quot;) public class BirdServiceImpl implements BirdService { @Autowired @Qualifier(&quot;Quail&quot;) private Bird bird; public void ScopTest() { bird.twitter(); bird.changeTwiter(); bird.twitter(); } } 再次运行时： 鹌鹑不知道怎么叫 我大鹌鹑今天就是饿死。。。。 鹌鹑不知道怎么叫 我大鹌鹑今天就是饿死。。。。 假设“ServiceTest”方法为Control层，“BirdServiceImpl”方法为Service层，“Quail”为Bean,在实际应用时，应该考虑Scop注解是否会可以成功生效。 如下为测试后的结果 //当Service上有@Scope(&quot;prototype&quot;)，Bean上有@Scope(&quot;prototype&quot;)时 返回不同对象 //当Service上有@Scope(&quot;prototype&quot;)，Bean上无@Scope(&quot;prototype&quot;)时 返回相同对象 //当Service上无@Scope(&quot;prototype&quot;)，Bean上有@Scope(&quot;prototype&quot;)时 返回相同对象 //当Service上无@Scope(&quot;prototype&quot;)，Bean上无@Scope(&quot;prototype&quot;)时 返回相同对象</p>
+<hr>
+<p><strong>5.注入式声明Bean</strong> 在上述代码中，我都是通过硬编码的形式在输入一些内容的，那么能否通过读取配置文件的方式完成输出内容呢？（实际运用场景：获取数据库连接对象Session） 我们首先定义一个对象，可以看到我没有添加任何注解，因为此对象不需要在这里进行装配！ package com.wjc.spring.bean.impl; import com.wjc.spring.bean.Bird; <em>//这是杜鹃</em> public class <strong>Cuckoo</strong> implements <strong>Bird</strong> { private String flyStr = &quot;fly&quot; ; private String feedStr = &quot;feed&quot;; private String twiterStr = &quot;twiter&quot;; public <strong>Cuckoo</strong>(String flyStr, String feedStr, String twiterStr) { super(); this.flyStr = flyStr; this.feedStr = feedStr; this.twiterStr = twiterStr; } <strong>@Override</strong> public void <strong>fly</strong>() { <em>// TODO Auto-generated method stub</em> System.out.println(flyStr); } <strong>@Override</strong> public void <strong>feed</strong>() { <em>// TODO Auto-generated method stub</em> System.out.println(feedStr); } <strong>@Override</strong> public void <strong>twitter</strong>() { <em>// TODO Auto-generated method stub</em> System.out.println(twiterStr); } <strong>@Override</strong> public void <strong>changeTwiter</strong>() { <em>// TODO Auto-generated method stub</em> twiterStr = &quot;杜鹃&quot;; } } 我们将Config改造一下，由他来负责装配对象 package com.wjc.spring.config; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.ComponentScan; import org.springframework.context.annotation.Configuration; import org.springframework.context.annotation.PropertySource; import org.springframework.core.env.Environment; import com.wjc.spring.bean.impl.Cuckoo; <strong>@Configuration</strong> <em>//扫描指定包目录</em> <strong>@ComponentScan(basePackages=&quot;com.wjc&quot;)</strong> <strong>@PropertySource(&quot;classpath:Cuckoo.properties&quot;)</strong> public class <strong>BeanConfig</strong> { <em>//开启组件扫描</em> <em>//获取资源</em> <strong>@Autowired</strong> private Environment env; <em>//通过配置文件装配Cuckoo</em> <strong>@Bean(name=&quot;Cuckoo1&quot;)</strong> public Cuckoo getbird() { return new Cuckoo(env.getProperty(&quot;flyStr&quot;,&quot;fly&quot;), env.getProperty(&quot;feedStr&quot;,&quot;feed&quot;), env.getProperty(&quot;twiterStr&quot;,&quot;twiter&quot;)); <em>//return new Cuckoo(&quot;fly&quot;,&quot;feed&quot;, &quot;twiter&quot;);</em> } <strong>@Bean(name=&quot;Cuckoo2&quot;)</strong> public Cuckoo getbird2() { return new Cuckoo(&quot;fly&quot;,&quot;feed&quot;, &quot;twiter&quot;); } } 可以看到我声明了2个&quot;Cuckoo&quot;对象实例，分别叫“Cuckoo1”，“Cuckoo2” 使用Test方法来执行一下 package com.wjc.spring.test; import org.junit.Test; import org.junit.runner.RunWith; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.beans.factory.annotation.Qualifier; import org.springframework.test.context.ContextConfiguration; import org.springframework.test.context.junit4.SpringJUnit4ClassRunner; import com.wjc.spring.bean.impl.Cuckoo; import com.wjc.spring.config.BeanConfig; @RunWith(SpringJUnit4ClassRunner.class) @ContextConfiguration(classes=BeanConfig.class) public class BeanTest4 { @Autowired @Qualifier(&quot;Cuckoo2&quot;) private Cuckoo Cuckoo; @Autowired @Qualifier(&quot;Cuckoo1&quot;) private Cuckoo Cuckoo1; <em>//测试通过配置文件装配Bean</em> @Test public void BeanTest1() { Cuckoo1.fly(); Cuckoo1.feed(); Cuckoo1.twitter(); Cuckoo.fly(); Cuckoo.feed(); Cuckoo.twitter(); } } 执行结果 cuckoo fly cuckoo feed cuckoo twiter fly feed twiter 可以看到成功的声明了对象。</p>
+<blockquote>
+<p>原文始发于：<a href="https://zhuanlan.zhihu.com/p/58339257">Spring实战拆书--SpringBean</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于IO流具体说明：]]></title>
+        <id>https://alex.github.io/post/274/</id>
+        <link href="https://alex.github.io/post/274/">
+        </link>
+        <updated>2019-03-01T02:37:54.000Z</updated>
+        <content type="html"><![CDATA[<p>原文始发于：<a href="https://zhuanlan.zhihu.com/p/58405705">关于IO流具体说明</a>       作者： <a href="https://www.zhihu.com/people/17674043193/activities">Strive追逐者</a> IO流（Input Output）： 文件和程序直接项链的我们称为：节点流. 文件和程序之间有两个过程，显然是经过处理，我们称：处理流.</p>
+<p>流的分类： 从文件等（数据源）到程序的我们称之为输入流（InputStream,Reader读进来） 从程序到目的地我们称之为输出流（OutPutStream，Writer写出去）</p>
+<p>处理数据单元： 字节流：按照字节读取数据 字符流：按照字符读取数据.</p>
+<p>功能不同： 1.节点流：可以直接从数据源换货目的地读写数据. 2.处理流（包装流）：不直接连接到数据源或目的地，是其他流进行封装，目的主要是简单化操作和提高性能.</p>
+<p>什么是IO流： 1.在Java程序中，对于数据的输入输出的操作以“流”（stream）方式进行. 2.J2SDK提供了各种各样的“流”类，用以获取不同种类的数据；程序中通过标准的输入或输出数据. 3.Java的流类型一般位于<a href="http://link.zhihu.com/?target=http%3A//Java.io">http://Java.io</a>包中.</p>
+<p>流的概念： 数据源：数据从哪来的？ <a href="http://link.zhihu.com/?target=http%3A//1.data">1.data</a> source. 提供原始数据的原始媒介，常见的：数据库，文件，其他程序，内存，网络连接，IO设备. 2.数据源就像水箱，流就像水管中流着的水流，程序就是我们的最终用户，流就是一个抽象，动态的概念，是一连串连续动态的数据集合.</p>
+<p>节点流和处理流的关系： 1.节点流处于io操作的第一线，所有操作必须通过他们进行. 2.处理流可以对其他流进行处理（提高效率或操作灵活性）</p>
+<p>文件字节流： 一，FileInputStream/FileOutStream 这些方法都是抽象类： 1.使用FileInputStream（字节输入流）读取文件内容 (1)abstract int read();//读取一个字节. (2)int read (byte b[])； (3)int read(byte b[];int off,int len); (4)int available(); (5)close();//关闭</p>
+<p>2.FileOutputSteam(字节输出流).写内容到文件. (1)abstract void write(int b);//一次写一个字节 (2)void write(byte b[]);//用数组输出字节 (3)void write(byte b[],int off,int len); (4)void flush();//刷新缓冲区 (5)void close();//关闭</p>
+<p>二：缓冲字节流 1.读文件和写文件都使用了缓冲区，减少了读写次数，从而提高了效率. 2.当创建这两个缓冲流的对象时时，会创建了内部缓冲数组，缺省使用 32 字节大小的缓冲区. 3.当读取数据时，数据按块读入缓冲区，其后的读操作则直接访问缓冲区. 4.当写入数据时，首先写入缓冲区，当缓冲区满时，其中的数据写入所连接的输出流。使用方法 flush()可以强制将缓冲区的内容全部写入输出流. 5.关闭流的顺序和打开流的顺序相反.只要关闭高层流即可，关闭高层流其实关闭的底层节点流 6.Flush 的使用：手动将 buffer 中内容写入文件.</p>
+<p>二（2） InputStreamReader 的作用是把 InputStream 转换成 Reader OutputStreamWriter 的作用是把 OutputStream 转换成 Writer</p>
+<p>三：打印流 1.PrintStream 提供了一系列的 print()和 println()，可以实现将基本数据类型格式化成字符串输出。对象类型将先调用toString()，然后输出该方法返回的字符串. 2.System.out 就是 PrintStream 的一个实例，代表显示器. 3.System.err 也是 PrintStream 的一个实例，代表显示器. 4.PrintStream的输出功能非常强大，通常需要输出文本内容，都可以将输出流包装成 PrintStream 后进行输出 5..PrintStream 的方法都不抛出 IOException.</p>
+<p>四：数据流 1.提供了可以存取所有 Java 基础类型数据（如：int，double等）和 String 的方法。 2.处理流，只针对字节流，二进制文件. 3.输入流链和输出流链 4.注意：只要关闭上层流即可.</p>
+<p>五:对象流 写对象： //第一步：创建对象流对象 //第二步：第二步写对象 //第三步：判断和关闭 读对象： //第一步：创建对象流对象 //第二步：读对象 对象序列化（Serialization） ObjectOutputStream——&gt;写对象（把对象的状态以字节的形式写入我们的磁盘的文件上）-&gt;又被称之为序列化 ObjectInputStream--&gt;读对象-&gt;反序列化(磁盘上字节形式的数据还原成对象的内存状态)</p>
+<p>将Java对象转换成字节序列（IO字节流） 对象反序列化（DeSerialization） 从字节序列中恢复java对象.</p>
+<p>为什么需要序列化： 序列化的对象可以保存到磁盘里面，也可以在网络上传输，使得不同的计算机可以共享对象（序列化的字节序列是与平台无关的）</p>
+<p>对象序列化需要的条件： 只有实现了Seralizable接口的类的对象才可以被序列化，Serializable接口中没有任何的方法，实现改接口的类不需要实现额外的方法.如果对象的属性是对象，属性对应类也必须实现Serializable接口.</p>
+<p>序列化能保存的元素内容： 1).只能保存对象的非静态成员变量. 2).不能保存任何成员方法和静态成员变量. 3).不保存Transient成员变量. 4).如果一个对象的成员变量是一个对象，这个对象的成员变量也会被保存. 5).串行化保存的只是变量的值，对于变量的任何修饰符，度不能保存.</p>
+<p>2.使用对象流把一个对象写到问件时不仅保证该对象时序列化的，而且该对象的成员对象也必须是可序列化的.</p>
+<p>3.如果一个可序列化的对象包含对某个不可序列化的对象的引用，那么整个序列元操作将会失败，并且会抛出一个NotSerializableException.我们可以将这个引用标记为transient,那么对象仍然可以序列化.</p>
+<p>对象序列化需要注意的事项： 一：同一个对象多次序列化的处理 1.所有保存到磁盘中的对象都有一个序列化编号. 2.序列化一个对象中，首先检查该对象是否已经序列化过. 3.如果没有进行序列化 4.如果序列化了，将不再重新序列化，而是输出编号即可. 二： 如果不希望某些属性（敏感）序列化，或不希望出现递归序列 1.为属性添加transient关键字（完成排除在序列化之外） 2.自定义序列化（不仅可以决定那些属性不参与序列化）还可以定义属性具体如何序列化</p>
+<p>三：序列化版本不兼容 1.修改了实例属性后，会影响版本号，从而导致反序列化不成功.</p>
+<p>文件夹的复制： 复制文件夹：字节流和字符流. 字节流：缓冲字节流（BuffereddInputStream,BufferedOutputStream,FileInputStream,FileOutputStream） 简述过程如： 1.复制一个文件 2.复制一个指定目录下的所有文件. 3.复制指定目录下所有文件及其子目录下的所有文件.</p>
+<figure data-type="image" tabindex="1"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress7-1551925800.jpeg" alt="关于IO流具体说明：" title="关于IO流具体说明：" loading="lazy"></figure>
+<p>设计模式：装饰器模式 装饰器模式：Decorator 职业：动态的为一个对象增加新的功能. 装饰模式是一种用于替代继承的技术，无需通过继承增加子类就能扩展对象的新功能，使用对象的关联关系代替继承关系，更加灵活，同食避免类型体系的快速膨胀.</p>
+<p>实现细节：如车 1.抽象构件角色 ICar 2.具体的构件角色 Car 3.装饰器角色 SuperCar 4.具体的装饰角色 FlyCar，WaterCar,AICar</p>
+<p>优点： 1.扩展对象功能，比继承灵活，不会导致类个数急剧增加. 2.可以对一个对象进行多次装饰，创建不同行为的组合得到功能更加大的对象. 3.具体构建类和具体装饰类可以独立变化，用户可以根据需要自己增加新的具体构件子类和具体装饰子类.</p>
+<p>缺点： 1.产生很多小对象，大量小对象占据内存，一定程度影响性能. 2.装饰模式易于出错，调试排查比较麻烦.</p>
+<p>IO流实现这些细节： 1.抽象构件角色 InputStream,OutputStream,Reader,Write. 2.具体构件角色：FileInputStream,FileOutputStream, 3.装饰器角色：FilerterInputStream,FilerOutputStream,持有一个抽象构件的引用. 4.具体装饰角色：BufferedInputSteam,BufferedOutputStream等.</p>
+<p>IO流体系总结： IO流整体架构体系： 1.字节流：InputStream,OutputStream 2.字符流：Reader,Writer 3.数据流：DataInputStream,DataOutputStream 4.对象流：ObjectInputStream,ObjectOutStream 5.缓冲流：BufferedInputStream,ObjectOutputStream,BuffereReadre,BufferedWriter. 6.转换流：InputStreamReader,OutputStreamWriter.</p>
+<p>Apache IOUtils的使用_Apache FileUtils的使用 一，IOUtils与FileUtiles Commous IO是apache的一个开源的工具包，封装了IO操作的相关类，使用Commous IO可以很方便的读写文件 1.FileUtils中提供了许多设计文件操作的，已封装好的方法. 2.IOUtils则是提供了读写文件的方法.</p>
+<p>有哪些方法： (1)String FileUtils.readFileToString(File file,String encoding) FileUtils.writeStringToFile(File file,String data,Stringencoding)读写文件 (2)FileUtils.copyFile(File srcFile,File destFile)复制文件 (3)FileUtils.copyURLToFile(URL source,File destination)复制url 对象到指定文件</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SpringCloud学习笔记(2)——Ribbon]]></title>
+        <id>https://alex.github.io/post/331/</id>
+        <link href="https://alex.github.io/post/331/">
+        </link>
+        <updated>2019-03-01T02:36:34.000Z</updated>
+        <content type="html"><![CDATA[<p>参考SpringCloud官网第16、17章 <strong>16. Client Side Load Balancer: Ribbon</strong> Ribbon是一个客户端的负载均衡器，它提供对大量的HTTP和TCP客户端的访问控制。Feign也是用的Ribbon，所以在这一章你也可以用@FeignClient Ribbon的一个核心概念是命名的客户端。每个负载均衡器都是这个组件的全体的一部分，它们一起工作来连接到服务器，并且它们全体都有一个给定的名字。 Spring Cloud用RibbonClientConfiguration在ApplicationContext中创建一个新的全体，它包含一个ILoadBalancer、一个RestClient和一个ServerListFilter <strong>16.1 How to Include Ribbon</strong></p>
+<figure data-type="image" tabindex="1"><img src="https://lmqkid.com/wp-content/uploads/2019/03/8-1551948733.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p><strong>16.2 Customizing the Ribbon Client</strong> Spring Cloud可以让你自己完全控制Ribbon客户端，通过用@RibbonClient来声明额外的配置。例如</p>
+<figure data-type="image" tabindex="2"><img src="https://lmqkid.com/wp-content/uploads/2019/03/5-1551948733.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>在这个例子中，这个客户端由RibbonClientConfiguration和FooConfiguration一起组成。</p>
+<blockquote>
+<p>注意：本例中，FooConfiguration必须用@Configuration注解标注，但是它不应该在主Application Context的组件扫描之中，否则它将被所有的Ribbon客户端共享。如果你用@ComponentScan（或者@SpringBootApplication），那么你应该采取措施来避免它被包含到扫描的范围中。</p>
+</blockquote>
+<figure data-type="image" tabindex="3"><img src="https://lmqkid.com/wp-content/uploads/2019/03/7-1551948734.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://lmqkid.com/wp-content/uploads/2019/03/2-1551948734.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p><strong>16.3 Customizing default for all Ribbon Clients</strong> 通过@RibbonClients注解可以为所有的Ribbon客户端提供一个默认的配置。例如</p>
+<figure data-type="image" tabindex="5"><img src="https://lmqkid.com/wp-content/uploads/2019/03/3-1551948734.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p><strong>16.6 Example: How to Use Ribbon Without Eureka</strong> Eureka提供了一种抽象的发现远程服务的便捷的方式，这样你就不必在客户端代码中硬编码服务端的URL，但是如果你不用它，那么Ribbon和Feign也是经得起考验的。假设，你没有使用Eureka，并且你用@FeignClient声明了一个&quot;stores&quot;服务，这个时候Ribbon Client默认生成一个配置的服务列表，当然你也可以提供下面这样的配置：</p>
+<figure data-type="image" tabindex="6"><img src="https://lmqkid.com/wp-content/uploads/2019/03/0-1551948734.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p><strong>16.7 Example: Disable Eureka use in Ribbon</strong></p>
+<figure data-type="image" tabindex="7"><img src="https://lmqkid.com/wp-content/uploads/2019/03/6-1551948734.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>说了这么多，那究竟怎么用呢？下面看示例演示 在这个示例中有三个角色：注册中心、服务提供方、服务消费方</p>
+<figure data-type="image" tabindex="8"><img src="https://lmqkid.com/wp-content/uploads/2019/03/0-1551948734-1.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>服务提供方是eureka-demo-client，消费方是ribbon-demo，下面看下消费方是如何配置的 首先是pom.xml，这个没啥说的</p>
+<figure data-type="image" tabindex="9"><img src="https://lmqkid.com/wp-content/uploads/2019/03/8-1551948735.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>其次是application.yml，也没什么特别的</p>
+<figure data-type="image" tabindex="10"><img src="https://lmqkid.com/wp-content/uploads/2019/03/1-1551948735.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>最后是启动类</p>
+<figure data-type="image" tabindex="11"><img src="https://lmqkid.com/wp-content/uploads/2019/03/8-1551948735-1.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>还有调用的类</p>
+<figure data-type="image" tabindex="12"><img src="https://lmqkid.com/wp-content/uploads/2019/03/10-1551948735.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>先启动eureka-demo-server，然后再启动另外两个工程</p>
+<figure data-type="image" tabindex="13"><img src="https://lmqkid.com/wp-content/uploads/2019/03/10-1551948736.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>浏览器访问消费方地址</p>
+<figure data-type="image" tabindex="14"><img src="https://lmqkid.com/wp-content/uploads/2019/03/0-1551948736.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="15"><img src="https://lmqkid.com/wp-content/uploads/2019/03/8-1551948736.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>哈哈哈，访问成功！！！</p>
+<figure data-type="image" tabindex="16"><img src="https://lmqkid.com/wp-content/uploads/2019/03/4-1551948736.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p><strong>17. Declarative REST Client: Feign</strong> Feign是一个声明式的Web服务客户端，它使得访问Web服务变得更容易。为了使用Feign，需要创建接口并且使用注解标注它。使用Feign的时候，Spring Cloud集成Ribbon和Eureka来提供一个具有负载均衡能力的HTTP客户端。 <strong>17.1 How to Include Feign</strong></p>
+<figure data-type="image" tabindex="17"><img src="https://lmqkid.com/wp-content/uploads/2019/03/1-1551948736.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="18"><img src="https://lmqkid.com/wp-content/uploads/2019/03/5-1551948736.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>@FeignClient注解的value值是一个任意客户端的名字，这个名字被用于创建Ribbon负载均衡器。你还可以使用url属性来指定一个url。 Ribbon客户端想要发现&quot;stores&quot;这个服务的真实的物理地址。如果你的应用中使用的是Eureka，那么它将通过Eureka服务注册类解析。 <strong>17.2 Overriding Feign Defaults</strong></p>
+<figure data-type="image" tabindex="19"><img src="https://lmqkid.com/wp-content/uploads/2019/03/4-1551948737.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="20"><img src="https://lmqkid.com/wp-content/uploads/2019/03/9-1551948737.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>接下来，用Feign演示如何调用 再新建一个工程feign-demo</p>
+<figure data-type="image" tabindex="21"><img src="https://lmqkid.com/wp-content/uploads/2019/03/2-1551948737.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="22"><img src="https://lmqkid.com/wp-content/uploads/2019/03/5-1551948737.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="23"><img src="https://lmqkid.com/wp-content/uploads/2019/03/2-1551948737-1.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="24"><img src="https://lmqkid.com/wp-content/uploads/2019/03/4-1551948737-1.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="25"><img src="https://lmqkid.com/wp-content/uploads/2019/03/2-1551948737-2.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="26"><img src="https://lmqkid.com/wp-content/uploads/2019/03/1-1551948738.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="27"><img src="https://lmqkid.com/wp-content/uploads/2019/03/2-1551948738.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<blockquote>
+<p>原文始发于：<a href="https://zhuanlan.zhihu.com/p/58551764">SpringCloud学习笔记(2)——Ribbon</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SpringCloud学习笔记(1)——Eureka]]></title>
+        <id>https://alex.github.io/post/250/</id>
+        <link href="https://alex.github.io/post/250/">
+        </link>
+        <updated>2019-03-01T02:34:24.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>Spring Cloud</strong></p>
+<figure data-type="image" tabindex="1"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress10-1551925792.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>如果想学习Java工程化、高性能及分布式、深入浅出。微服务、Spring，MyBatis，Netty源码分析的朋友可以加我的Java高级交流：854630135，群里有阿里大牛直播讲解技术，以及Java大型互联网技术的视频免费分享给大家。 Spring Cloud为开发者快速构建通用的分布式系统（例如：配置管理、服务发现、断路器、智能路由、微代理、控制总线、一次性的Token、全局锁、领导者选举、分布式会话、集群状态）提供工具。 这里用的是最新版本Edgware</p>
+<figure data-type="image" tabindex="2"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress0-1551925792-1.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p><strong>操作步骤</strong> 1、新建一个工程作为Eureka Server</p>
+<figure data-type="image" tabindex="3"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress2-1551925793.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress4-1551925793.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>创建完成后的pom.xml文件是这样的</p>
+<figure data-type="image" tabindex="5"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress6-1551925793.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>接下来，运行一个Eureka Server</p>
+<figure data-type="image" tabindex="6"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress7-1551925793.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress5-1551925794.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>所以，最终这个工程看起来是这样的</p>
+<figure data-type="image" tabindex="8"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress1-1551925794.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>启动以后，在浏览器中输入http://localhost:8761/就能看的如下界面</p>
+<figure data-type="image" tabindex="9"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress4-1551925794.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>2、接下来，再建一个工程作为Eureka Client。唯一不同的是artifact id换成spring-cloud-starter-netflix-eureka-client 接下都是翻译自官方文档中第三部分Spring Cloud Netflix第11章部分小节 <strong>11.2 Registering with Eureka</strong> 当客户端用Eureka注册的时候，它提供自身的元数据，比如主机、端口、url、主页地址等等。Eureka接收某个服务下所有实例的心跳消息。如果心跳检测失败（超过配置的超时时间）了，那么这个实例通常会被从注册列表中删除。</p>
+<figure data-type="image" tabindex="10"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress2-1551925794.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>只要在你的应用的classpath下有spring-cloud-starter-netflix-eureka-client，那么将会自动注册到Eureka Server。当然需要配置Eureka Server的地址。例如：</p>
+<figure data-type="image" tabindex="11"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress6-1551925794.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>默认的应用的名称、虚拟主机和非安全的端口分别用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi>s</mi><mi>p</mi><mi>r</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi mathvariant="normal">.</mi><mi>a</mi><mi>p</mi><mi>p</mi><mi>l</mi><mi>i</mi><mi>c</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mi mathvariant="normal">.</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi></mrow><mi mathvariant="normal">、</mi></mrow><annotation encoding="application/x-tex">{spring.application.name}、</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">.</span><span class="mord mathdefault">a</span><span class="mord mathdefault">p</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">c</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">i</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord">.</span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span></span><span class="mord cjk_fallback">、</span></span></span></span>{spring.application.name}和${server.port}代表。 如果不想让Eureka发现客户端，你可以设置eureka.client.enabled的值为false 如果想学习Java工程化、高性能及分布式、深入浅出。微服务、Spring，MyBatis，Netty源码分析的朋友可以加我的Java高级交流：854630135，群里有阿里大牛直播讲解技术，以及Java大型互联网技术的视频免费分享给大家。 于是</p>
+<figure data-type="image" tabindex="12"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress6-1551925795.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<figure data-type="image" tabindex="13"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress6-1551925795-1.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>观察两边的启动日志</p>
+<figure data-type="image" tabindex="14"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress1-1551925795.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<figure data-type="image" tabindex="15"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress9-1551925795.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>此时再看http://localhost:8761/</p>
+<figure data-type="image" tabindex="16"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress10-1551925795.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p><strong>11.4 Status Page and Health Indicator</strong> Eureka实例的状态页面和健康指示器默认情况下分别用&quot;/info&quot;和&quot;/health&quot;代表。当然这个是可以改的。默认就像下面这样</p>
+<figure data-type="image" tabindex="17"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress2-1551925796.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p><strong>11.6 Eureka’s Health Checks</strong> 默认情况下，Eureka用客户端心跳检测来判断一个客户端是否活着。除非有特殊情况，否则这个客户端不会传播这个应用的健康检查状态给每个Spring Boot监控器。这就意味着在注册成功以后，将总是宣称这个应用是&quot;UP&quot;状态。这个行为可以被Eureka健康检查改变，这种改变的结果就是传播应用的状态给Eureka</p>
+<figure data-type="image" tabindex="18"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress6-1551925796.jpeg" alt="SpringCloud学习笔记(1)——Eureka" title="SpringCloud学习笔记(1)——Eureka" loading="lazy"></figure>
+<p>注意：eureka.client.healthcheck.enabled=true只应该写在application.yml中。 <strong>11.7.3 Changing the Eureka Instance ID</strong> 默认的实例ID的格式是这样的：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi>s</mi><mi>p</mi><mi>r</mi><mi>i</mi><mi>n</mi><mi>g</mi><mi mathvariant="normal">.</mi><mi>c</mi><mi>l</mi><mi>o</mi><mi>u</mi><mi>d</mi><mi mathvariant="normal">.</mi><mi>c</mi><mi>l</mi><mi>i</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>h</mi><mi>o</mi><mi>s</mi><mi>t</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi></mrow><mo>:</mo></mrow><annotation encoding="application/x-tex">{spring.cloud.client.hostname}:</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">.</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">d</span><span class="mord">.</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mord">.</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span></span></span>{spring.application.name}:<span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;}&#039;, got &#039;EOF&#039; at end of input: …n.instance\_id:'>{spring.application.instance\_id:</span>{server.port}}} 当然，可以使用eureka.instance.instanceId覆盖这种默认的设置 欢迎工作一到八年的Java工程师朋友们加入Java高级交流：854630135 本群提供免费的学习指导 架构资料 以及免费的解答 不懂得问题都可以在本群提出来 之后还会有直播平台和讲师直接交流噢</p>
+<blockquote>
+<p>原文始发于：<a href="https://zhuanlan.zhihu.com/p/58459425">SpringCloud学习笔记(1)——Eureka</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[小伙子，你真的搞懂 transient  关键字了吗？]]></title>
+        <id>https://alex.github.io/post/244/</id>
+        <link href="https://alex.github.io/post/244/">
+        </link>
+        <updated>2019-03-01T02:33:15.000Z</updated>
+        <content type="html"><![CDATA[<p></p>
+<h2 id="先解释下什么是序列化">先解释下什么是序列化</h2>
+<p>我们的对象并不只是存在内存中，还需要传输网络，或者保存起来下次再加载出来用，所以需要Java序列化技术。 Java序列化技术正是将对象转变成一串由二进制字节组成的数组，可以通过将二进制数据保存到磁盘或者传输网络，磁盘或者网络接收者可以在对象的属类的模板上来反序列化类的对象，达到对象持久化的目的。 更多序列化请参考：《<a href="http://link.zhihu.com/?target=https%3A//mp.weixin.qq.com/s/wHmK1kKyne6gCkIxt0NERQ">关于Java序列化你应该知道的一切</a>》这篇文章。</p>
+<h2 id="什么是-transient">什么是 transient？</h2>
+<p>简单来说就是，被 transient 修饰的变量不能被序列化。 <strong>具体来看下面的示例1</strong></p>
+<pre><code>import java.io.FileInputStream; import java.io.FileOutputStream; import java.io.ObjectInputStream; import java.io.ObjectOutputStream; import java.io.Serializable;  /**  * @author 微信公众号：Java技术栈  */ public class TransientTest {      public static void main(String[] args) throws Exception {          User user = new User();         user.setUsername(&quot;Java技术栈&quot;);         user.setId(&quot;javastack&quot;);          System.out.println(&quot;n序列化之前&quot;);         System.out.println(&quot;username: &quot; + user.getUsername());         System.out.println(&quot;id: &quot; + user.getId());          ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(&quot;d:/user.txt&quot;));         os.writeObject(user);         os.flush();         os.close();          ObjectInputStream is = new ObjectInputStream(new FileInputStream(&quot;d:/user.txt&quot;));         user = (User) is.readObject();         is.close();          System.out.println(&quot;n序列化之后&quot;);         System.out.println(&quot;username: &quot; + user.getUsername());         System.out.println(&quot;id: &quot; + user.getId());      } }  /**  * @author 微信公众号：Java技术栈  */ class User implements Serializable {      private static final long serialVersionUID = 1L;      private String username;     private transient String id;      public String getUsername() {         return username;     }      public void setUsername(String username) {         this.username = username;     }      public String getId() {         return id;     }      public void setId(String id) {         this.id = id;     }  } 
+</code></pre>
+<p><strong>输出结果：</strong></p>
+<pre><code>序列化之前 username: Java技术栈 id: javastack  序列化之后 username: Java技术栈 id: null 
+</code></pre>
+<p>示例1在 id 字段上加了 transient 关键字修饰，反序列化出来之后值为 null，说明了被 transient 修饰的变量不能被序列化。</p>
+<h2 id="静态变量能被序列化吗">静态变量能被序列化吗？</h2>
+<p>这个话题也是最近栈长的Java技术栈vip群里面讨论的，大家对这个知识点比较模糊，我就写了这篇文章测试总结一下。</p>
+<figure data-type="image" tabindex="1"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress5-1551925789.jpeg" alt="小伙子，你真的搞懂 transient 关键字了吗？" title="小伙子，你真的搞懂 transient 关键字了吗？" loading="lazy"></figure>
+<blockquote>
+<p>如果你也想加入我们的Java技术栈vip群和各位大牛一起讨论技术，那点击<a href="http://link.zhihu.com/?target=https%3A//mp.weixin.qq.com/s/iqCLAduVzDqt19L6D4FCUQ">这个链接</a>了解加入吧。</p>
+</blockquote>
+<p>那么，到底静态变量能被序列化吗？废话少说，先动手测试下吧！ 示例2：</p>
+<pre><code>import java.io.FileInputStream; import java.io.FileOutputStream; import java.io.ObjectInputStream; import java.io.ObjectOutputStream; import java.io.Serializable;  /**  * @author 微信公众号：Java技术栈  */ public class TransientStaticTest {      public static void main(String[] args) throws Exception {          User2 user = new User2();         User2.username = &quot;Java技术栈1&quot;;         user.setId(&quot;javastack&quot;);          System.out.println(&quot;n序列化之前&quot;);         System.out.println(&quot;username: &quot; + user.getUsername());         System.out.println(&quot;id: &quot; + user.getId());          ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(&quot;d:/user.txt&quot;));         os.writeObject(user);         os.flush();         os.close();          // 在反序列化出来之前，改变静态变量的值         User2.username = &quot;Java技术栈2&quot;;          ObjectInputStream is = new ObjectInputStream(new FileInputStream(&quot;d:/user.txt&quot;));         user = (User2) is.readObject();         is.close();          System.out.println(&quot;n序列化之后&quot;);         System.out.println(&quot;username: &quot; + user.getUsername());         System.out.println(&quot;id: &quot; + user.getId());      } }  /**  * @author 微信公众号：Java技术栈  */ class User2 implements Serializable {      private static final long serialVersionUID = 1L;      public static String username;     private transient String id;      public String getUsername() {         return username;     }      public String getId() {         return id;     }      public void setId(String id) {         this.id = id;     }  } 
+</code></pre>
+<p><strong>输出结果：</strong></p>
+<pre><code>序列化之前 username: Java技术栈1 id: javastack  序列化之后 username: Java技术栈2 id: null 
+</code></pre>
+<p>示例2把 username 改为了 public static, 并在反序列化出来之前改变了静态变量的值，结果可以看出序列化之后的值并非序列化进去时的值。 由以上结果分析可知，静态变量不能被序列化，示例2读取出来的是 username 在 JVM 内存中存储的值。</p>
+<h2 id="transient-真不能被序列化吗">transient 真不能被序列化吗？</h2>
+<p>继续来看示例3：</p>
+<pre><code>import java.io.Externalizable; import java.io.File; import java.io.FileInputStream; import java.io.FileOutputStream; import java.io.IOException; import java.io.ObjectInput; import java.io.ObjectInputStream; import java.io.ObjectOutput; import java.io.ObjectOutputStream;  /**  * @author 微信公众号：Java技术栈  */ public class ExternalizableTest {      public static void main(String[] args) throws Exception {          User3 user = new User3();         user.setUsername(&quot;Java技术栈&quot;);         user.setId(&quot;javastack&quot;);         ObjectOutput objectOutput = new ObjectOutputStream(new FileOutputStream(new File(&quot;javastack&quot;)));         objectOutput.writeObject(user);          ObjectInput objectInput = new ObjectInputStream(new FileInputStream(new File(&quot;javastack&quot;)));         user = (User3) objectInput.readObject();          System.out.println(user.getUsername());         System.out.println(user.getId());          objectOutput.close();         objectInput.close();     }  }  /**  * @author 微信公众号：Java技术栈  */ class User3 implements Externalizable {      private static final long serialVersionUID = 1L;      public User3() {      }      private String username;     private transient String id;      public String getUsername() {         return username;     }      public void setUsername(String username) {         this.username = username;     }      public String getId() {         return id;     }      public void setId(String id) {         this.id = id;     }      @Override     public void writeExternal(ObjectOutput objectOutput) throws IOException {         objectOutput.writeObject(id);     }      @Override     public void readExternal(ObjectInput objectInput) throws IOException, ClassNotFoundException {         id = (String) objectInput.readObject();     }  } 
+</code></pre>
+<p><strong>输出结果：</strong></p>
+<pre><code>null javastack 
+</code></pre>
+<p>示例3的 id 被 transient 修改了，为什么还能序列化出来？那是因为 User3 实现了接口 Externalizable，而不是 Serializable。 在 Java 中有两种实现序列化的方式，Serializable 和 Externalizable，可能大部分人只知道 Serializable 而不知道 Externalizable。 这两种序列化方式的区别是：实现了 Serializable 接口是自动序列化的，实现 Externalizable 则需要手动序列化，通过 writeExternal 和 readExternal 方法手动进行，这也是为什么上面的 username 为 null 的原因了。</p>
+<h2 id="transient-关键字总结">transient 关键字总结</h2>
+<p>1）transient修饰的变量不能被序列化； 2）transient只作用于实现 Serializable 接口； 3）transient只能用来修饰普通成员变量字段； 4）不管有没有 transient 修饰，静态变量都不能被序列化； 好了，栈长花了半天时间，终于整理完了。如果对你有帮助，那就转发分享一下吧！如果你也想加入我们的Java技术栈vip群和各位大牛一起讨论技术，那点击<a href="http://link.zhihu.com/?target=https%3A//mp.weixin.qq.com/s/iqCLAduVzDqt19L6D4FCUQ">这个链接</a>了解加入吧 另外，栈长已经整理了大量 Java 系列核心技术知识点文章，关注Java技术栈微信公众号，在后台回复关键字：java，即可获取最新版。</p>
+<blockquote>
+<blockquote>
+<p>本文原创首发于微信公众号：Java技术栈（id:javastack），关注公众号在后台回复 &quot;java&quot; 可获取更多，转载请原样保留本信息。</p>
+</blockquote>
+<blockquote>
+<p>原文始发于：<a href="https://zhuanlan.zhihu.com/p/58422235">小伙子，你真的搞懂 transient 关键字了吗？</a></p>
+</blockquote>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Java内存溢出(OOM)异常完全指南]]></title>
+        <id>https://alex.github.io/post/232/</id>
+        <link href="https://alex.github.io/post/232/">
+        </link>
+        <updated>2019-03-01T02:26:21.000Z</updated>
+        <content type="html"><![CDATA[<p>原文始发于：<a href="https://zhuanlan.zhihu.com/p/58474118">Java内存溢出(OOM)异常完全指南</a>   作者 ： <a href="https://www.zhihu.com/people/an-jing-de-cheng-xu-yuan-22/activities">安静的程序员</a>   这也许是目前最为完整的Java OOM异常的解决指南。</p>
+<h2 id="1-javalangoutofmemoryerrorjava-heap-space"><strong>1、java.lang.OutOfMemoryError:Java heap space</strong></h2>
+<p>Java应用程序在启动时会指定所需要的内存大小，它被分割成两个不同的区域：Heap space（堆空间）和Permgen（永久代）：</p>
+<figure data-type="image" tabindex="1"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress4-1551925783.jpeg" alt="Java内存溢出(OOM)异常完全指南" title="Java内存溢出(OOM)异常完全指南" loading="lazy"></figure>
+<p>这两个区域的大小可以在JVM（Java虚拟机）启动时通过参数-Xmx和-XX:MaxPermSize设置，如果你没有显式设置，则将使用特定平台的默认值。</p>
+<p>当应用程序试图向堆空间添加更多的数据，但堆却没有足够的空间来容纳这些数据时，将会触发java.lang.OutOfMemoryError: Java heap space异常。需要注意的是：即使有足够的物理内存可用，只要达到堆空间设置的大小限制，此异常仍然会被触发。</p>
+<p><strong>原因分析</strong> 触发java.lang.OutOfMemoryError: Java heap space最常见的原因就是应用程序需要的堆空间是XXL号的，但是JVM提供的却是S号。解决方法也很简单，提供更大的堆空间即可。除了前面的因素还有更复杂的成因：</p>
+<ul>
+<li>流量/数据量峰值：应用程序在设计之初均有用户量和数据量的限制，某一时刻，当用户数量或数据量突然达到一个峰值，并且这个峰值已经超过了设计之初预期的阈值，那么以前正常的功能将会停止，并触发java.lang.OutOfMemoryError: Java heap space异常。</li>
+<li>内存泄漏：特定的编程错误会导致你的应用程序不停的消耗更多的内存，每次使用有内存泄漏风险的功能就会留下一些不能被回收的对象到堆空间中，随着时间的推移，泄漏的对象会消耗所有的堆空间，最终触发java.lang.OutOfMemoryError: Java heap space错误。</li>
+</ul>
+<p><strong>示例</strong> <strong>①、简单示例</strong> 首先看一个非常简单的示例，下面的代码试图创建2 x 1024 x 1024个元素的整型数组，当你尝试编译并指定12M堆空间运行时（java -Xmx12m OOM）将会失败并抛出java.lang.OutOfMemoryError: Java heap space错误，而当你指定13M堆空间时，将正常的运行。</p>
+<p>计算数组占用内存大小，不再本文的范围内，读者有兴趣，可以自行计算 class OOM { static final int SIZE=2*1024*1024; public static void main(String[] a) { int[] i = new int[SIZE]; } } 运行如下： D:&gt;javac OOM.java D:&gt;java -Xmx12m OOM Exception in thread &quot;main&quot; java.lang.OutOfMemoryError: Java heap space at OOM.main(OOM.java:4) D:&gt;java -Xmx13m OOM</p>
+<p><strong>②、内存泄漏示例</strong> 在Java中，当开发者创建一个新对象（比如：new Integer(5)）时，不需要自己开辟内存空间，而是把它交给JVM。在应用程序整个生命周期类，JVM负责检查哪些对象可用，哪些对象未被使用。未使用对象将被丢弃，其占用的内存也将被回收，这一过程被称为垃圾回收。JVM负责垃圾回收的模块集合被称为垃圾回收器（GC）。</p>
+<p>Java的内存自动管理机制依赖于GC定期查找未使用对象并删除它们。Java中的内存泄漏是由于GC无法识别一些已经不再使用的对象，而这些未使用的对象一直留在堆空间中，这种堆积最终会导致java.lang.OutOfMemoryError: Java heap space错误。</p>
+<p>我们可以非常容易的写出导致内存泄漏的Java代码：</p>
+<pre><code>public class KeylessEntry { static class Key {          Integer id; Key(Integer id) { this.id = id; } @Override public int hashCode()  { return id.hashCode(); } } public static void main(String[] args) {          Map&lt;Key,String&gt; m = new HashMap&lt;Key,String&gt;(); while(true) { for(int i=0;i&lt;10000;i++)  { if(!m.containsKey(new Key(i))) {                     m.put(new Key(i), &quot;Number:&quot; + i);  } } } } } 
+</code></pre>
+<p>代码中HashMap为本地缓存，第一次while循环，会将10000个元素添加到缓存中。后面的while循环中，由于key已经存在于缓存中，缓存的大小将一直会维持在10000。但事实真的如此吗？由于Key实体没有实现equals()方法，导致for循环中每次执行m.containsKey(new Key(i))结果均为false，其结果就是HashMap中的元素将一直增加。</p>
+<p>随着时间的推移，越来越多的Key对象进入堆空间且不能被垃圾收集器回收（m为局部变量，GC会认为这些对象一直可用，所以不会回收），直到所有的堆空间被占用，最后抛出java.lang.OutOfMemoryError:Java heap space。</p>
+<p>上面的代码直接运行可能很久也不会抛出异常，可以在启动时使用-Xmx参数，设置堆内存大小，或者在for循环后打印HashMap的大小，执行后会发现HashMap的size一直再增长。 解决方法也非常简单，只要Key实现自己的equals方法即可：</p>
+<pre><code>Override public boolean equals(Object o) {  boolean response = false; if (o instanceof Key) {          response = (((Key)o).id).equals(this.id); } return response;  } 
+</code></pre>
+<p><strong>解决方案</strong> 第一个解决方案是显而易见的，你应该确保有足够的堆空间来正常运行你的应用程序，在JVM的启动配置中增加如下配置：</p>
+<pre><code>-Xmx1024m 
+</code></pre>
+<p>上面的配置分配1024M堆空间给你的应用程序，当然你也可以使用其他单位，比如用G表示GB，K表示KB。下面的示例都表示最大堆空间为1GB：</p>
+<pre><code>java -Xmx1073741824 com.mycompany.MyClass java -Xmx1048576k com.mycompany.MyClass java -Xmx1024m com.mycompany.MyClass java -Xmx1g com.mycompany.MyClass 
+</code></pre>
+<p>然后，更多的时候，单纯地增加堆空间不能解决所有的问题。如果你的程序存在内存泄漏，一味的增加堆空间也只是推迟java.lang.OutOfMemoryError: Java heap space错误出现的时间而已，并未解决这个隐患。除此之外，垃圾收集器在GC时，应用程序会停止运行直到GC完成，而增加堆空间也会导致GC时间延长，进而影响程序的吞吐量。</p>
+<p>如果你想完全解决这个问题，那就好好提升自己的编程技能吧，当然运用好Debuggers, profilers, heap dump analyzers等工具，可以让你的程序最大程度的避免内存泄漏问题。</p>
+<h2 id="2-javalangoutofmemoryerrorgc-overhead-limit-exceeded"><strong>2、java.lang.OutOfMemoryError:GC overhead limit exceeded</strong></h2>
+<p>Java运行时环境（JRE）包含一个内置的垃圾回收进程，而在许多其他的编程语言中，开发者需要手动分配和释放内存。</p>
+<p>Java应用程序只需要开发者分配内存，每当在内存中特定的空间不再使用时，一个单独的垃圾收集进程会清空这些内存空间。垃圾收集器怎样检测内存中的某些空间不再使用已经超出本文的范围，但你只需要相信GC可以做好这些工作即可。</p>
+<p>默认情况下，当应用程序花费超过98%的时间用来做GC并且回收了不到2%的堆内存时，会抛出java.lang.OutOfMemoryError:GC overhead limit exceeded错误。具体的表现就是你的应用几乎耗尽所有可用内存，并且GC多次均未能清理干净。</p>
+<p><strong>原因分析</strong> java.lang.OutOfMemoryError:GC overhead limit exceeded错误是一个信号，示意你的应用程序在垃圾收集上花费了太多时间但却没有什么卵用。默认超过98%的时间用来做GC却回收了不到2%的内存时将会抛出此错误。那如果没有此限制会发生什么呢？GC进程将被重启，100%的CPU将用于GC，而没有CPU资源用于其他正常的工作。如果一个工作本来只需要几毫秒即可完成，现在却需要几分钟才能完成，我想这种结果谁都没有办法接受。</p>
+<p>所以java.lang.OutOfMemoryError:GC overhead limit exceeded也可以看做是一个fail-fast（快速失败）实战的实例。</p>
+<p><strong>示例</strong> 下面的代码初始化一个map并在无限循环中不停的添加键值对，运行后将会抛出GC overhead limit exceeded错误：</p>
+<pre><code>public class Wrapper {  public static void main(String args[]) throws Exception {          Map map = System.getProperties();          Random r = new Random(); while (true) {              map.put(r.nextInt(), &quot;value&quot;); } } } 
+</code></pre>
+<p>正如你所预料的那样，程序不能正常的结束，事实上，当我们使用如下参数启动程序时： java -Xmx100m -XX:+UseParallelGC Wrapper 我们很快就可以看到程序抛出java.lang.OutOfMemoryError: GC overhead limit exceeded错误。但如果在启动时设置不同的堆空间大小或者使用不同的GC算法，比如这样： java -Xmx10m -XX:+UseParallelGC Wrapper 我们将看到如下错误：</p>
+<pre><code>Exception in thread &quot;main&quot; java.lang.OutOfMemoryError: Java heap space      at java.util.Hashtable.rehash(Unknown Source)      at java.util.Hashtable.addEntry(Unknown Source)      at java.util.Hashtable.put(Unknown Source)      at cn.moondev.Wrapper.main(Wrapper.java:12) 
+</code></pre>
+<p>使用以下GC算法：-XX:+UseConcMarkSweepGC 或者-XX:+UseG1GC，启动命令如下： java -Xmx100m -XX:+UseConcMarkSweepGC Wrapper java -Xmx100m -XX:+UseG1GC Wrapper 得到的结果是这样的：</p>
+<pre><code>Exception: java.lang.OutOfMemoryError thrown from   the UncaughtExceptionHandler in thread &quot;main&quot; 
+</code></pre>
+<p>错误已经被默认的异常处理程序捕获，并且没有任何错误的堆栈信息输出。</p>
+<p>以上这些变化可以说明，在资源有限的情况下，你根本无法无法预测你的应用是怎样挂掉的，什么时候会挂掉，所以在开发时，你不能仅仅保证自己的应用程序在特定的环境下正常运行。</p>
+<p><strong>解决方案</strong> 首先是一个毫无诚意的解决方案，如果你仅仅是不想看到java.lang.OutOfMemoryError:GC overhead limit exceeded的错误信息，可以在应用程序启动时添加如下JVM参数： -XX:-UseGCOverheadLimit 但是强烈建议不要使用这个选项，因为这样并没有解决任何问题，只是推迟了错误出现的时间，错误信息也变成了我们更熟悉的java.lang.OutOfMemoryError: Java heap space而已。</p>
+<p>另一个解决方案，如果你的应用程序确实内存不足，增加堆内存会解决GC overhead limit问题，就如下面这样，给你的应用程序1G的堆内存： java -Xmx1024m com.yourcompany.YourClass 但如果你想确保你已经解决了潜在的问题，而不是掩盖java.lang.OutOfMemoryError: GC overhead limit exceeded错误，那么你不应该仅止步于此。你要记得还有profilers和memory dump analyzers这些工具，你需要花费更多的时间和精力来查找问题。还有一点需要注意，这些工具在Java运行时有显著的开销，因此不建议在生产环境中使用。</p>
+<p><strong>3、java.lang.OutOfMemoryError:Permgen space</strong> Java中堆空间是JVM管理的最大一块内存空间，可以在JVM启动时指定堆空间的大小，其中堆被划分成两个不同的区域：新生代（Young）和老年代（Tenured），新生代又被划分为3个区域：Eden、From Survivor、To Survivor，如下图所示。</p>
+<figure data-type="image" tabindex="2"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress3-1551925783.jpeg" alt="Java内存溢出(OOM)异常完全指南" title="Java内存溢出(OOM)异常完全指南" loading="lazy"></figure>
+<p>java.lang.OutOfMemoryError: PermGen space错误就表明持久代所在区域的内存已被耗尽。</p>
+<p><strong>原因分析</strong> 要理解java.lang.OutOfMemoryError: PermGen space出现的原因，首先需要理解Permanent Generation Space的用处是什么。持久代主要存储的是每个类的信息，比如：类加载器引用、运行时常量池（所有常量、字段引用、方法引用、属性）、字段(Field)数据、方法(Method)数据、方法代码、方法字节码等等。我们可以推断出，PermGen的大小取决于被加载类的数量以及类的大小。</p>
+<p>因此，我们可以得出出现java.lang.OutOfMemoryError: PermGen space错误的原因是：太多的类或者太大的类被加载到permanent generation（持久代）。</p>
+<p><strong>示例</strong> <strong>①、最简单的示例</strong> 正如前面所描述的，PermGen的使用与加载到JVM类的数量有密切关系，下面是一个最简单的示例：</p>
+<pre><code>import javassist.ClassPool; public class MicroGenerator {  public static void main(String[] args) throws Exception {  for (int i = 0; i &lt; 100_000_000; i++) { generate(&quot;cn.moondev.User&quot; + i);  } } public static Class generate(String name) throws Exception {          ClassPool pool = ClassPool.getDefault(); return pool.makeClass(name).toClass();  }  } 
+</code></pre>
+<p>运行时请设置JVM参数：-XX:MaxPermSize=5m，值越小越好。需要注意的是JDK8已经完全移除持久代空间，取而代之的是元空间（Metaspace），所以示例最好的JDK1.7或者1.6下运行。</p>
+<p>代码在运行时不停的生成类并加载到持久代中，直到撑满持久代内存空间，最后抛出java.lang.OutOfMemoryError:Permgen space。代码中类的生成使用了javassist库。</p>
+<p><strong>②、Redeploy-time</strong> 更复杂和实际的一个例子就是Redeploy（重新部署，你可以想象一下你开发时，点击eclipse的reploy按钮或者使用idea时按ctrl + F5时的过程）。在从服务器卸载应用程序时，当前的classloader以及加载的class在没有实例引用的情况下，持久代的内存空间会被GC清理并回收。如果应用中有类的实例对当前的classloader的引用，那么Permgen区的class将无法被卸载，导致Permgen区的内存一直增加直到出现Permgen space错误。</p>
+<p>不幸的是，许多第三方库以及糟糕的资源处理方式（比如：线程、JDBC驱动程序、文件系统句柄）使得卸载以前使用的类加载器变成了一件不可能的事。反过来就意味着在每次重新部署过程中，应用程序所有的类的先前版本将仍然驻留在Permgen区中，你的每次部署都将生成几十甚至几百M的垃圾。</p>
+<p>就以线程和JDBC驱动来说说。很多人都会使用线程来处理一下周期性或者耗时较长的任务，这个时候一定要注意线程的生命周期问题，你需要确保线程不能比你的应用程序活得还长。否则，如果应用程序已经被卸载，线程还在继续运行，这个线程通常会维持对应用程序的classloader的引用，造成的结果就不再多说。多说一句，开发者有责任处理好这个问题，特别是如果你是第三方库的提供者的话，一定要提供线程关闭接口来处理清理工作。</p>
+<p>让我们想象一个使用JDBC驱动程序连接到关系数据库的示例应用程序。当应用程序部署到服务器上的时：服务器创建一个classloader实例来加载应用所有的类（包含相应的JDBC驱动）。根据JDBC规范，JDBC驱动程序（比如：com.mysql.jdbc.Driver）会在初始化时将自己注册到java.sql.DriverManager中。该注册过程中会将驱动程序的一个实例存储在DriverManager的静态字段内，代码可以参考：</p>
+<pre><code>// com.mysql.jdbc.Driver源码 package com.mysql.jdbc;  public class Driver extends NonRegisteringDriver implements java.sql.Driver {  public Driver() throws SQLException { } static { try {              DriverManager.registerDriver(new Driver()); } catch (SQLException var1)  { throw new RuntimeException(&quot;Can't register driver!&quot;);  } } } // // // // // // // // // // //  再看下DriverManager对应代码 private final static CopyOnWriteArrayList&lt;DriverInfo&gt;  registeredDrivers = new CopyOnWriteArrayList&lt;&gt;();  public static synchronized void registerDriver(java.sql.Driver driver,DriverAction da)  throws SQLException { if(driver != null) {          registeredDrivers.addIfAbsent(new DriverInfo(driver, da)); }  else { throw new NullPointerException(); } } 
+</code></pre>
+<p>现在，当从服务器上卸载应用程序的时候，java.sql.DriverManager仍将持有那个驱动程序的引用，进而持有用于加载应用程序的classloader的一个实例的引用。这个classloader现在仍然引用着应用程序的所有类。如果此程序启动时需要加载2000个类，占用约10MB永久代（PermGen）内存，那么只需要5~10次重新部署，就会将默认大小的永久代（PermGen）塞满，然后就会触发java.lang.OutOfMemoryError: PermGen space错误并崩溃。</p>
+<p><strong>解决方案</strong> <strong>① 解决初始化时的OutOfMemoryError</strong> 当在应用程序启动期间触发由于PermGen耗尽引起的OutOfMemoryError时，解决方案很简单。 应用程序需要更多的空间来加载所有的类到PermGen区域，所以我们只需要增加它的大小。 为此，请更改应用程序启动配置，并添加（或增加，如果存在）-XX：MaxPermSize参数，类似于以下示例：</p>
+<pre><code>java -XX:MaxPermSize=512m com.yourcompany.YourClass 
+</code></pre>
+<p><strong>② 解决Redeploy时的OutOfMemoryError</strong> 分析dump文件：首先，找出引用在哪里被持有；其次，给你的web应用程序添加一个关闭的hook，或者在应用程序卸载后移除引用。你可以使用如下命令导出dump文件：</p>
+<pre><code>jmap -dump:format=b,file=dump.hprof &lt;process-id&gt; 
+</code></pre>
+<p>如果是你自己代码的问题请及时修改，如果是第三方库，请试着搜索一下是否存在&quot;关闭&quot;接口，如果没有给开发者提交一个bug或者issue吧。</p>
+<p><strong>③ 解决运行时OutOfMemoryError</strong> 首先你需要检查是否允许GC从PermGen卸载类，JVM的标准配置相当保守，只要类一创建，即使已经没有实例引用它们，其仍将保留在内存中，特别是当应用程序需要动态创建大量的类但其生命周期并不长时，允许JVM卸载类对应用大有助益，你可以通过在启动脚本中添加以下配置参数来实现：</p>
+<pre><code>-XX:+CMSClassUnloadingEnabled 
+</code></pre>
+<p>默认情况下，这个配置是未启用的，如果你启用它，GC将扫描PermGen区并清理已经不再使用的类。但请注意，这个配置只在UseConcMarkSweepGC的情况下生效，如果你使用其他GC算法，比如：ParallelGC或者Serial GC时，这个配置无效。所以使用以上配置时，请配合：</p>
+<pre><code>-XX:+UseConcMarkSweepGC 
+</code></pre>
+<p>如果你已经确保JVM可以卸载类，但是仍然出现内存溢出问题，那么你应该继续分析dump文件，使用以下命令生成dump文件：</p>
+<pre><code>jmap -dump:file=dump.hprof,format=b &lt;process-id&gt; 
+</code></pre>
+<p>当你拿到生成的堆转储文件，并利用像Eclipse Memory Analyzer Toolkit这样的工具来寻找应该卸载却没被卸载的类加载器，然后对该类加载器加载的类进行排查，找到可疑对象，分析使用或者生成这些类的代码，查找产生问题的根源并解决它。</p>
+<p><strong>4、java.lang.OutOfMemoryError:Metaspace</strong> 前文已经提过，PermGen区域用于存储类的名称和字段，类的方法，方法的字节码，常量池，JIT优化等，但从Java8开始，Java中的内存模型发生了重大变化：引入了称为Metaspace的新内存区域，而删除了PermGen区域。请注意：不是简单的将PermGen区所存储的内容直接移到Metaspace区，PermGen区中的某些部分，已经移动到了普通堆里面。</p>
+<p></p>
+<figure data-type="image" tabindex="3"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress2-1551925784.jpeg" alt="Java内存溢出(OOM)异常完全指南" title="Java内存溢出(OOM)异常完全指南" loading="lazy"></figure>
+<p></p>
+<p><strong>原因分析</strong> Java8做出如此改变的原因包括但不限于：</p>
+<ul>
+<li>应用程序所需要的PermGen区大小很难预测，设置太小会触发PermGen OutOfMemoryError错误，过度设置导致资源浪费。</li>
+<li>提升GC性能，在HotSpot中的每个垃圾收集器需要专门的代码来处理存储在PermGen中的类的元数据信息。从PermGen分离类的元数据信息到Metaspace，由于Metaspace的分配具有和Java Heap相同的地址空间，因此Metaspace和Java Heap可以无缝的管理，而且简化了FullGC的过程，以至将来可以并行的对元数据信息进行垃圾收集，而没有GC暂停。</li>
+<li>支持进一步优化，比如：G1并发类的卸载，也算为将来做准备吧</li>
+</ul>
+<p>正如你所看到的，元空间大小的要求取决于加载的类的数量以及这种类声明的大小。 所以很容易看到java.lang.OutOfMemoryError: Metaspace主要原因：太多的类或太大的类加载到元空间。</p>
+<p><strong>示例</strong> 正如上文中所解释的，元空间的使用与加载到JVM中的类的数量密切相关。 下面的代码是最简单的例子：</p>
+<pre><code>public class Metaspace {  static javassist.ClassPool cp = javassist.ClassPool.getDefault();  public static void main(String[] args) throws Exception{ for (int i = 0; ; i++) {               Class c = cp.makeClass(&quot;eu.plumbr.demo.Generated&quot; + i).toClass();              System.out.println(i); } } } 
+</code></pre>
+<p>程序运行中不停的生成新类，所有的这些类的定义将被加载到Metaspace区，直到空间被完全占用并且抛出java.lang.OutOfMemoryError:Metaspace。当使用-XX：MaxMetaspaceSize = 32m启动时，大约加载30000多个类时就会死机。</p>
+<pre><code>31023 31024 Exception in thread &quot;main&quot;  javassist.CannotCompileException: by java.lang.OutOfMemoryError: Metaspace      at javassist.ClassPool.toClass(ClassPool.java:1170)      at javassist.ClassPool.toClass(ClassPool.java:1113)      at javassist.ClassPool.toClass(ClassPool.java:1071)      at javassist.CtClass.toClass(CtClass.java:1275)      at cn.moondev.book.Metaspace.main(Metaspace.java:12) ..... 
+</code></pre>
+<p><strong>解决方案</strong> 第一个解决方案是显而易见的，既然应用程序会耗尽内存中的Metaspace区空间，那么应该增加其大小，更改启动配置增加如下参数： # 告诉JVM：Metaspace允许增长到512，然后才能抛出异常 -XX：MaxMetaspaceSize = 512m 另一个方法就是删除此参数来完全解除对Metaspace大小的限制（默认是没有限制的）。默认情况下，对于64位服务器端JVM，MetaspaceSize默认大小是21M（初始限制值），一旦达到这个限制值，FullGC将被触发进行类卸载，并且这个限制值将会被重置，新的限制值依赖于Metaspace的剩余容量。如果没有足够空间被释放，这个限制值将会上升，反之亦然。在技术上Metaspace的尺寸可以增长到交换空间，而这个时候本地内存分配将会失败（更具体的分析，可以参考：Java PermGen 去哪里了?）。</p>
+<p>你可以通过修改各种启动参数来“快速修复”这些内存溢出错误，但你需要正确区分你是否只是推迟或者隐藏了java.lang.OutOfMemoryError的症状。如果你的应用程序确实存在内存泄漏或者本来就加载了一些不合理的类，那么所有这些配置都只是推迟问题出现的时间而已，实际也不会改善任何东西。</p>
+<p><strong>5、java.lang.OutOfMemoryError:Unable to create new native thread</strong> 一个思考线程的方法是将线程看着是执行任务的工人，如果你只有一个工人，那么他同时只能执行一项任务，但如果你有十几个工人，就可以同时完成你几个任务。就像这些工人都在物理世界，JVM中的线程完成自己的工作也是需要一些空间的，当有足够多的线程却没有那么多的空间时就会像这样：</p>
+<p></p>
+<figure data-type="image" tabindex="4"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress10-1551925784.jpeg" alt="Java内存溢出(OOM)异常完全指南" title="Java内存溢出(OOM)异常完全指南" loading="lazy"></figure>
+<p></p>
+<p>出现java.lang.OutOfMemoryError:Unable to create new native thread就意味着Java应用程序已达到其可以启动线程数量的极限了。</p>
+<p><strong>原因分析</strong> 当JVM向OS请求创建一个新线程时，而OS却无法创建新的native线程时就会抛出Unable to create new native thread错误。一台服务器可以创建的线程数依赖于物理配置和平台，建议运行下文中的示例代码来测试找出这些限制。总体上来说，抛出此错误会经过以下几个阶段：</p>
+<ul>
+<li>运行在JVM内的应用程序请求创建一个新的线程</li>
+<li>JVM向OS请求创建一个新的native线程</li>
+<li>OS尝试创建一个新的native线程，这时需要分配内存给新的线程</li>
+<li>OS拒绝分配内存给线程，因为32位Java进程已经耗尽内存地址空间（2-4GB内存地址已被命中）或者OS的虚拟内存已经完全耗尽</li>
+<li>Unable to create new native thread错误将被抛出</li>
+</ul>
+<p><strong>示例</strong> 下面的示例不能的创建并启动新的线程。当代码运行时，很快达到OS的线程数限制，并抛出Unable to create new native thread错误。</p>
+<pre><code>while(true){ new Thread(new Runnable(){ public void run() { try {                  Thread.sleep(10000000); } catch(InterruptedException e) { } } }).start(); } 
+</code></pre>
+<p><strong>解决方案</strong> 有时，你可以通过在OS级别增加线程数限制来绕过这个错误。如果你限制了JVM可在用户空间创建的线程数，那么你可以检查并增加这个限制： # macOS 10.12上执行 $ ulimit -u 709 当你的应用程序产生成千上万的线程，并抛出此异常，表示你的程序已经出现了很严重的编程错误，我不觉得应该通过修改参数来解决这个问题，不管是OS级别的参数还是JVM启动参数。更可取的办法是分析你的应用是否真的需要创建如此多的线程来完成任务？是否可以使用线程池或者说线程池的数量是否合适？是否可以更合理的拆分业务来实现.....</p>
+<p><strong>6、java.lang.OutOfMemoryError:Out of swap space?</strong> Java应用程序在启动时会指定所需要的内存大小，可以通过-Xmx和其他类似的启动参数来指定。在JVM请求的总内存大于可用物理内存的情况下，操作系统会将内存中的数据交换到磁盘上去。</p>
+<p></p>
+<figure data-type="image" tabindex="5"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress9-1551925784.jpeg" alt="Java内存溢出(OOM)异常完全指南" title="Java内存溢出(OOM)异常完全指南" loading="lazy"></figure>
+<p></p>
+<p>Out of swap space?表示交换空间也将耗尽，并且由于缺少物理内存和交换空间，再次尝试分配内存也将失败。</p>
+<p><strong>原因分析</strong> 当应用程序向JVM native heap请求分配内存失败并且native heap也即将耗尽时，JVM会抛出Out of swap space错误。该错误消息中包含分配失败的大小（以字节为单位）和请求失败的原因。</p>
+<p>Native Heap Memory是JVM内部使用的Memory，这部分的Memory可以通过JDK提供的JNI的方式去访问，这部分Memory效率很高，但是管理需要自己去做，如果没有把握最好不要使用，以防出现内存泄露问题。JVM 使用Native Heap Memory用来优化代码载入（JTI代码生成），临时对象空间申请，以及JVM内部的一些操作。 这个问题往往发生在Java进程已经开始交换的情况下，现代的GC算法已经做得足够好了，当时当面临由于交换引起的延迟问题时，GC暂停的时间往往会让大多数应用程序不能容忍。</p>
+<p>java.lang.OutOfMemoryError:Out of swap space?往往是由操作系统级别的问题引起的，例如：</p>
+<ul>
+<li>操作系统配置的交换空间不足。</li>
+<li>系统上的另一个进程消耗所有内存资源。</li>
+</ul>
+<p>还有可能是本地内存泄漏导致应用程序失败，比如：应用程序调用了native code连续分配内存，但却没有被释放。</p>
+<p><strong>解决方案</strong> 解决这个问题有几个办法，通常最简单的方法就是增加交换空间，不同平台实现的方式会有所不同，比如在Linux下可以通过如下命令实现： # 原作者使用，由于我手里并没有Linux环境，所以并未测试 # 创建并附加一个大小为640MB的新交换文件 swapoff -a dd if=/dev/zero of=swapfile bs=1024 count=655360 mkswap swapfile swapon swapfile Java GC会扫描内存中的数据，如果是对交换空间运行垃圾回收算法会使GC暂停的时间增加几个数量级，因此你应该慎重考虑使用上文增加交换空间的方法。</p>
+<p>如果你的应用程序部署在JVM需要同其他进程激烈竞争获取资源的物理机上，建议将服务隔离到单独的虚拟机中</p>
+<p>但在许多情况下，您唯一真正可行的替代方案是：</p>
+<ul>
+<li>升级机器以包含更多内存</li>
+<li>优化应用程序以减少其内存占用</li>
+</ul>
+<p>当您转向优化路径时，使用内存转储分析程序来检测内存中的大分配是一个好的开始。</p>
+<p><strong>7、java.lang.OutOfMemoryError:Requested array size exceeds VM limit</strong> Java对应用程序可以分配的最大数组大小有限制。不同平台限制有所不同，但通常在1到21亿个元素之间。</p>
+<p></p>
+<figure data-type="image" tabindex="6"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress2-1551925785.jpeg" alt="Java内存溢出(OOM)异常完全指南" title="Java内存溢出(OOM)异常完全指南" loading="lazy"></figure>
+<p></p>
+<p>当你遇到Requested array size exceeds VM limit错误时，意味着你的应用程序试图分配大于Java虚拟机可以支持的数组。</p>
+<p><strong>原因分析</strong> 该错误由JVM中的native code抛出。 JVM在为数组分配内存之前，会执行特定于平台的检查：分配的数据结构是否在此平台中是可寻址的。</p>
+<p>你很少见到这个错误是因为Java数组的索引是int类型。 Java中的最大正整数为2 ^ 31 - 1 = 2,147,483,647。 并且平台特定的限制可以非常接近这个数字，例如：我的环境上(64位macOS，运行Jdk1.8)可以初始化数组的长度高达2,147,483,645（Integer.MAX_VALUE-2）。如果再将数组的长度增加1到Integer.MAX_VALUE-1会导致熟悉的OutOfMemoryError： Exception in thread &quot;main&quot; java.lang.OutOfMemoryError: Requested array size exceeds VM limit 但是，在使用OpenJDK 6的32位Linux上，在分配具有大约11亿个元素的数组时，您将遇到Requested array size exceeded VM limit的错误。 要理解你的特定环境的限制，运行下文中描述的小测试程序。</p>
+<p><strong>示例</strong> for (int i = 3; i &gt;= 0; i--) { try { int[] arr = new int[Integer.MAX_VALUE-i]; System.out.format(&quot;Successfully initialized an array with %,d elements.n&quot;, Integer.MAX_VALUE-i); } catch (Throwable t) { t.printStackTrace(); } } 该示例重复四次，并在每个回合中初始化一个长原语数组。 该程序尝试初始化的数组的大小在每次迭代时增加1，最终达到Integer.MAX_VALUE。 现在，当使用Hotspot 7在64位Mac OS X上启动代码片段时，应该得到类似于以下内容的输出：</p>
+<pre><code>java.lang.OutOfMemoryError: Java heap space      at eu.plumbr.demo.ArraySize.main(ArraySize.java:8)  java.lang.OutOfMemoryError: Java heap space      at eu.plumbr.demo.ArraySize.main(ArraySize.java:8)  java.lang.OutOfMemoryError: Requested array size exceeds VM limit      at eu.plumbr.demo.ArraySize.main(ArraySize.java:8)  java.lang.OutOfMemoryError: Requested array size exceeds VM limit      at eu.plumbr.demo.ArraySize.main(ArraySize.java:8) 
+</code></pre>
+<p>注意，在出现Requested array size exceeded VM limit之前，出现了更熟悉的java.lang.OutOfMemoryError: Java heap space。 这是因为初始化2 ^ 31-1个元素的数组需要腾出8G的内存空间，大于JVM使用的默认值。</p>
+<p><strong>解决方案</strong> java.lang.OutOfMemoryError:Requested array size exceeds VM limit可能会在以下任一情况下出现：</p>
+<ul>
+<li>数组增长太大，最终大小在平台限制和Integer.MAX_INT之间</li>
+<li>你有意分配大于2 ^ 31-1个元素的数组</li>
+</ul>
+<p>在第一种情况下，检查你的代码库，看看你是否真的需要这么大的数组。也许你可以减少数组的大小，或者将数组分成更小的数据块，然后分批处理数据。</p>
+<p>在第二种情况下，记住Java数组是由int索引的。因此，当在平台中使用标准数据结构时，数组不能超过2 ^ 31-1个元素。事实上，在编译时就会出错：error：integer number too large。</p>
+<p><strong>8、Out of memory:Kill process or sacrifice child</strong> 为了理解这个错误，我们需要补充一点操作系统的基础知识。操作系统是建立在进程的概念之上，这些进程在内核中作业，其中有一个非常特殊的进程，名叫“内存杀手（Out of memory killer）”。当内核检测到系统内存不足时，OOM killer被激活，然后选择一个进程杀掉。哪一个进程这么倒霉呢？选择的算法和想法都很朴实：谁占用内存最多，谁就被干掉。如果你对OOM Killer感兴趣的话，建议你阅读参考资料2中的文章。</p>
+<p></p>
+<figure data-type="image" tabindex="7"><img src="https://lmqkid.com/wp-content/uploads/2019/03/beepress2-1551925785-1.jpeg" alt="Java内存溢出(OOM)异常完全指南" title="Java内存溢出(OOM)异常完全指南" loading="lazy"></figure>
+<p></p>
+<p>当可用虚拟虚拟内存(包括交换空间)消耗到让整个操作系统面临风险时，就会产生Out of memory:Kill process or sacrifice child错误。在这种情况下，OOM Killer会选择“流氓进程”并杀死它。</p>
+<p><strong>原因分析</strong> 默认情况下，Linux内核允许进程请求比系统中可用内存更多的内存，但大多数进程实际上并没有使用完他们所分配的内存。这就跟现实生活中的宽带运营商类似，他们向所有消费者出售一个100M的带宽，远远超过用户实际使用的带宽，一个10G的链路可以非常轻松的服务100个(10G/100M)用户，但实际上宽带运行商往往会把10G链路用于服务150人或者更多，以便让链路的利用率更高，毕竟空闲在那儿也没什么意义。</p>
+<p>Linux内核采用的机制跟宽带运营商差不多，一般情况下都没有问题，但当大多数应用程序都消耗完自己的内存时，麻烦就来了，因为这些应用程序的内存需求加起来超出了物理内存（包括 swap）的容量，内核（OOM killer）必须杀掉一些进程才能腾出空间保障系统正常运行。就如同上面的例子中，如果150人都占用100M的带宽，那么总的带宽肯定超过了10G这条链路能承受的范围。</p>
+<p><strong>示例</strong> 当你在Linux上运行如下代码：</p>
+<pre><code>public static void main(String[] args){      List&lt;int[]&gt; l = new java.util.ArrayList();  for (int i = 10000; i &lt; 100000; i++) { try {              l.add(new int[100000000]); } catch (Throwable t) {              t.printStackTrace(); } } } 
+</code></pre>
+<p>在Linux的系统日志中/var/log/kern.log会出现以下日志：</p>
+<pre><code>Jun  4 07:41:59 plumbr kernel: [70667120.897649] Out of memory: Kill process 29957 (java) score 366 or sacrifice child Jun  4 07:41:59 plumbr kernel: [70667120.897701] Killed process 29957 (java) total-vm:2532680kB, anon-rss:1416508kB, file-rss:0kB 
+</code></pre>
+<p>注意：你可能需要调整交换文件和堆大小，否则你将很快见到熟悉的Java heap space异常。在原作者的测试用例中，使用-Xmx2g指定的2g堆，并具有以下交换配置： # 注意：原作者使用，由于我手里并没有Linux环境，所以并未测试 swapoff -a dd if=/dev/zero of=swapfile bs=1024 count=655360 mkswap swapfile swapon swapfile <strong>解决方案</strong> 解决这个问题最有效也是最直接的方法就是升级内存，其他方法诸如：调整OOM Killer配置、水平扩展应用，将内存的负载分摊到若干小实例上..... 我们不建议的做法是增加交换空间，具体原因已经在前文说过。参考资料②中详细的介绍了怎样微调OOM Killer配置以及OOM Killer选择进程算法的实现，建议你参考阅读。</p>
+]]></content>
+    </entry>
+</feed>

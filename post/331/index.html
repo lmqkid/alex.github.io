@@ -1,0 +1,214 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SpringCloud学习笔记(2)——Ribbon | Gridea</title>
+<link rel="shortcut icon" href="https://alex.github.io/favicon.ico?v=1596250978242">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://alex.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="SpringCloud学习笔记(2)——Ribbon | Gridea - Atom Feed" href="https://alex.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="参考SpringCloud官网第16、17章 16. Client Side Load Balancer: Ribbon Ribbon是一个客户端的负载均衡器，它提供对大量的HTTP和TCP客户端的访问控制。Feign也是用的Ribbon，..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://alex.github.io">
+  <img class="avatar" src="https://alex.github.io/images/avatar.png?v=1596250978242" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              SpringCloud学习笔记(2)——Ribbon
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-03-01
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>参考SpringCloud官网第16、17章 <strong>16. Client Side Load Balancer: Ribbon</strong> Ribbon是一个客户端的负载均衡器，它提供对大量的HTTP和TCP客户端的访问控制。Feign也是用的Ribbon，所以在这一章你也可以用@FeignClient Ribbon的一个核心概念是命名的客户端。每个负载均衡器都是这个组件的全体的一部分，它们一起工作来连接到服务器，并且它们全体都有一个给定的名字。 Spring Cloud用RibbonClientConfiguration在ApplicationContext中创建一个新的全体，它包含一个ILoadBalancer、一个RestClient和一个ServerListFilter <strong>16.1 How to Include Ribbon</strong></p>
+<figure data-type="image" tabindex="1"><img src="https://lmqkid.com/wp-content/uploads/2019/03/8-1551948733.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p><strong>16.2 Customizing the Ribbon Client</strong> Spring Cloud可以让你自己完全控制Ribbon客户端，通过用@RibbonClient来声明额外的配置。例如</p>
+<figure data-type="image" tabindex="2"><img src="https://lmqkid.com/wp-content/uploads/2019/03/5-1551948733.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>在这个例子中，这个客户端由RibbonClientConfiguration和FooConfiguration一起组成。</p>
+<blockquote>
+<p>注意：本例中，FooConfiguration必须用@Configuration注解标注，但是它不应该在主Application Context的组件扫描之中，否则它将被所有的Ribbon客户端共享。如果你用@ComponentScan（或者@SpringBootApplication），那么你应该采取措施来避免它被包含到扫描的范围中。</p>
+</blockquote>
+<figure data-type="image" tabindex="3"><img src="https://lmqkid.com/wp-content/uploads/2019/03/7-1551948734.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://lmqkid.com/wp-content/uploads/2019/03/2-1551948734.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p><strong>16.3 Customizing default for all Ribbon Clients</strong> 通过@RibbonClients注解可以为所有的Ribbon客户端提供一个默认的配置。例如</p>
+<figure data-type="image" tabindex="5"><img src="https://lmqkid.com/wp-content/uploads/2019/03/3-1551948734.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p><strong>16.6 Example: How to Use Ribbon Without Eureka</strong> Eureka提供了一种抽象的发现远程服务的便捷的方式，这样你就不必在客户端代码中硬编码服务端的URL，但是如果你不用它，那么Ribbon和Feign也是经得起考验的。假设，你没有使用Eureka，并且你用@FeignClient声明了一个&quot;stores&quot;服务，这个时候Ribbon Client默认生成一个配置的服务列表，当然你也可以提供下面这样的配置：</p>
+<figure data-type="image" tabindex="6"><img src="https://lmqkid.com/wp-content/uploads/2019/03/0-1551948734.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p><strong>16.7 Example: Disable Eureka use in Ribbon</strong></p>
+<figure data-type="image" tabindex="7"><img src="https://lmqkid.com/wp-content/uploads/2019/03/6-1551948734.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>说了这么多，那究竟怎么用呢？下面看示例演示 在这个示例中有三个角色：注册中心、服务提供方、服务消费方</p>
+<figure data-type="image" tabindex="8"><img src="https://lmqkid.com/wp-content/uploads/2019/03/0-1551948734-1.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>服务提供方是eureka-demo-client，消费方是ribbon-demo，下面看下消费方是如何配置的 首先是pom.xml，这个没啥说的</p>
+<figure data-type="image" tabindex="9"><img src="https://lmqkid.com/wp-content/uploads/2019/03/8-1551948735.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>其次是application.yml，也没什么特别的</p>
+<figure data-type="image" tabindex="10"><img src="https://lmqkid.com/wp-content/uploads/2019/03/1-1551948735.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>最后是启动类</p>
+<figure data-type="image" tabindex="11"><img src="https://lmqkid.com/wp-content/uploads/2019/03/8-1551948735-1.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>还有调用的类</p>
+<figure data-type="image" tabindex="12"><img src="https://lmqkid.com/wp-content/uploads/2019/03/10-1551948735.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>先启动eureka-demo-server，然后再启动另外两个工程</p>
+<figure data-type="image" tabindex="13"><img src="https://lmqkid.com/wp-content/uploads/2019/03/10-1551948736.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>浏览器访问消费方地址</p>
+<figure data-type="image" tabindex="14"><img src="https://lmqkid.com/wp-content/uploads/2019/03/0-1551948736.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="15"><img src="https://lmqkid.com/wp-content/uploads/2019/03/8-1551948736.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>哈哈哈，访问成功！！！</p>
+<figure data-type="image" tabindex="16"><img src="https://lmqkid.com/wp-content/uploads/2019/03/4-1551948736.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p><strong>17. Declarative REST Client: Feign</strong> Feign是一个声明式的Web服务客户端，它使得访问Web服务变得更容易。为了使用Feign，需要创建接口并且使用注解标注它。使用Feign的时候，Spring Cloud集成Ribbon和Eureka来提供一个具有负载均衡能力的HTTP客户端。 <strong>17.1 How to Include Feign</strong></p>
+<figure data-type="image" tabindex="17"><img src="https://lmqkid.com/wp-content/uploads/2019/03/1-1551948736.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="18"><img src="https://lmqkid.com/wp-content/uploads/2019/03/5-1551948736.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>@FeignClient注解的value值是一个任意客户端的名字，这个名字被用于创建Ribbon负载均衡器。你还可以使用url属性来指定一个url。 Ribbon客户端想要发现&quot;stores&quot;这个服务的真实的物理地址。如果你的应用中使用的是Eureka，那么它将通过Eureka服务注册类解析。 <strong>17.2 Overriding Feign Defaults</strong></p>
+<figure data-type="image" tabindex="19"><img src="https://lmqkid.com/wp-content/uploads/2019/03/4-1551948737.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="20"><img src="https://lmqkid.com/wp-content/uploads/2019/03/9-1551948737.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<p>接下来，用Feign演示如何调用 再新建一个工程feign-demo</p>
+<figure data-type="image" tabindex="21"><img src="https://lmqkid.com/wp-content/uploads/2019/03/2-1551948737.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="22"><img src="https://lmqkid.com/wp-content/uploads/2019/03/5-1551948737.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="23"><img src="https://lmqkid.com/wp-content/uploads/2019/03/2-1551948737-1.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="24"><img src="https://lmqkid.com/wp-content/uploads/2019/03/4-1551948737-1.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="25"><img src="https://lmqkid.com/wp-content/uploads/2019/03/2-1551948737-2.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="26"><img src="https://lmqkid.com/wp-content/uploads/2019/03/1-1551948738.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<figure data-type="image" tabindex="27"><img src="https://lmqkid.com/wp-content/uploads/2019/03/2-1551948738.jpeg" alt="SpringCloud学习笔记(2)——Ribbon" title="SpringCloud学习笔记(2)——Ribbon" loading="lazy"></figure>
+<blockquote>
+<p>原文始发于：<a href="https://zhuanlan.zhihu.com/p/58551764">SpringCloud学习笔记(2)——Ribbon</a></p>
+</blockquote>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://alex.github.io/post/250/">
+              <h3 class="post-title">
+                SpringCloud学习笔记(1)——Eureka
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://alex.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

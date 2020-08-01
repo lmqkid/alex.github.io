@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://alex.github.io</id>
+    <id>https://lmqkid.github.io</id>
     <title>Ali &apos;s Home</title>
-    <updated>2020-08-01T06:34:44.952Z</updated>
+    <updated>2020-08-01T06:39:47.370Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://alex.github.io"/>
-    <link rel="self" href="https://alex.github.io/atom.xml"/>
+    <link rel="alternate" href="https://lmqkid.github.io"/>
+    <link rel="self" href="https://lmqkid.github.io/atom.xml"/>
     <subtitle>Ali的学习屋</subtitle>
-    <logo>https://alex.github.io/images/avatar.png</logo>
-    <icon>https://alex.github.io/favicon.ico</icon>
+    <logo>https://lmqkid.github.io/images/avatar.png</logo>
+    <icon>https://lmqkid.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Ali &apos;s Home</rights>
     <entry>
         <title type="html"><![CDATA[在线学习]]></title>
-        <id>https://alex.github.io/post/603/</id>
-        <link href="https://alex.github.io/post/603/">
+        <id>https://lmqkid.github.io/post/603/</id>
+        <link href="https://lmqkid.github.io/post/603/">
         </link>
         <updated>2020-08-01T02:44:18.000Z</updated>
         <content type="html"><![CDATA[<!-- wp:paragraph -->
@@ -68,8 +68,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[给你一份Spring Boot核心知识清单]]></title>
-        <id>https://alex.github.io/post/224/</id>
-        <link href="https://alex.github.io/post/224/">
+        <id>https://lmqkid.github.io/post/224/</id>
+        <link href="https://lmqkid.github.io/post/224/">
         </link>
         <updated>2019-03-06T23:10:30.000Z</updated>
         <content type="html"><![CDATA[<p>原文始发于：<a href="https://zhuanlan.zhihu.com/p/58470641">给你一份Spring Boot核心知识清单</a>   作者： <a href="https://www.zhihu.com/people/an-jing-de-cheng-xu-yuan-22/activities">安静的程序员</a></p>
@@ -264,8 +264,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Spring实战拆书--SpringBean]]></title>
-        <id>https://alex.github.io/post/363/</id>
-        <link href="https://alex.github.io/post/363/">
+        <id>https://lmqkid.github.io/post/363/</id>
+        <link href="https://lmqkid.github.io/post/363/">
         </link>
         <updated>2019-03-01T02:39:23.000Z</updated>
         <content type="html"><![CDATA[<p><strong>1.准备工作</strong> 请在github上下载源码结合文章阅读，效果更佳 在创建了SpringBoot项目后，我们首先需要开启组件扫描，如下代码所示。 @Configuration <em>//扫描指定包目录</em> @ComponentScan(basePackages=&quot;com.wjc&quot;) public class BeanConfig { ｝ 声明一个测试Bean的接口，全文的主要内容都是通过此接口的实现类完成的  package com.wjc.spring.bean; public interface <strong>Bird</strong> { void <strong>fly</strong>(); void <strong>feed</strong>(); void <strong>twitter</strong>(); void <strong>changeTwiter</strong>(); }</p>
@@ -286,8 +286,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[关于IO流具体说明：]]></title>
-        <id>https://alex.github.io/post/274/</id>
-        <link href="https://alex.github.io/post/274/">
+        <id>https://lmqkid.github.io/post/274/</id>
+        <link href="https://lmqkid.github.io/post/274/">
         </link>
         <updated>2019-03-01T02:37:54.000Z</updated>
         <content type="html"><![CDATA[<p>原文始发于：<a href="https://zhuanlan.zhihu.com/p/58405705">关于IO流具体说明</a>       作者： <a href="https://www.zhihu.com/people/17674043193/activities">Strive追逐者</a> IO流（Input Output）： 文件和程序直接项链的我们称为：节点流. 文件和程序之间有两个过程，显然是经过处理，我们称：处理流.</p>
@@ -326,8 +326,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[SpringCloud学习笔记(2)——Ribbon]]></title>
-        <id>https://alex.github.io/post/331/</id>
-        <link href="https://alex.github.io/post/331/">
+        <id>https://lmqkid.github.io/post/331/</id>
+        <link href="https://lmqkid.github.io/post/331/">
         </link>
         <updated>2019-03-01T02:36:34.000Z</updated>
         <content type="html"><![CDATA[<p>参考SpringCloud官网第16、17章 <strong>16. Client Side Load Balancer: Ribbon</strong> Ribbon是一个客户端的负载均衡器，它提供对大量的HTTP和TCP客户端的访问控制。Feign也是用的Ribbon，所以在这一章你也可以用@FeignClient Ribbon的一个核心概念是命名的客户端。每个负载均衡器都是这个组件的全体的一部分，它们一起工作来连接到服务器，并且它们全体都有一个给定的名字。 Spring Cloud用RibbonClientConfiguration在ApplicationContext中创建一个新的全体，它包含一个ILoadBalancer、一个RestClient和一个ServerListFilter <strong>16.1 How to Include Ribbon</strong></p>
@@ -384,8 +384,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[SpringCloud学习笔记(1)——Eureka]]></title>
-        <id>https://alex.github.io/post/250/</id>
-        <link href="https://alex.github.io/post/250/">
+        <id>https://lmqkid.github.io/post/250/</id>
+        <link href="https://lmqkid.github.io/post/250/">
         </link>
         <updated>2019-03-01T02:34:24.000Z</updated>
         <content type="html"><![CDATA[<p><strong>Spring Cloud</strong></p>
@@ -428,8 +428,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[小伙子，你真的搞懂 transient  关键字了吗？]]></title>
-        <id>https://alex.github.io/post/244/</id>
-        <link href="https://alex.github.io/post/244/">
+        <id>https://lmqkid.github.io/post/244/</id>
+        <link href="https://lmqkid.github.io/post/244/">
         </link>
         <updated>2019-03-01T02:33:15.000Z</updated>
         <content type="html"><![CDATA[<p></p>
@@ -478,8 +478,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Java内存溢出(OOM)异常完全指南]]></title>
-        <id>https://alex.github.io/post/232/</id>
-        <link href="https://alex.github.io/post/232/">
+        <id>https://lmqkid.github.io/post/232/</id>
+        <link href="https://lmqkid.github.io/post/232/">
         </link>
         <updated>2019-03-01T02:26:21.000Z</updated>
         <content type="html"><![CDATA[<p>原文始发于：<a href="https://zhuanlan.zhihu.com/p/58474118">Java内存溢出(OOM)异常完全指南</a>   作者 ： <a href="https://www.zhihu.com/people/an-jing-de-cheng-xu-yuan-22/activities">安静的程序员</a>   这也许是目前最为完整的Java OOM异常的解决指南。</p>
